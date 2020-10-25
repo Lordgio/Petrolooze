@@ -19,7 +19,7 @@ include ':domainfeature1:fake'
 
 include ':feature1'
 
-include ':extensions'
-include ':uiextensions'
-include ':uicomponents'
-include ':testutils'
+include ':utils:extensions'
+include ':utils:uiextensions'
+include ':utils:uicomponents'
+include ':utils:testutils'
