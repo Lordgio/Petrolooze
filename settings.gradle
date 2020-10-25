@@ -1,2 +1,25 @@
 rootProject.name = "Petrolooze"
 include ':app'
+
+include ':db:public'
+include ':db:impl'
+include ':db:fake'
+
+include ':api:public'
+include ':api:fake'
+include ':api:impl'
+
+include ':datasourcefeature1:public'
+include ':datasourcefeature1:impl'
+include ':datasourcefeature1:fake'
+
+include ':domainfeature1:public'
+include ':domainfeature1:impl'
+include ':domainfeature1:fake'
+
+include ':feature1'
+
+include ':extensions'
+include ':uiextensions'
+include ':uicomponents'
+include ':testutils'
