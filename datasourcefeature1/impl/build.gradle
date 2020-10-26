@@ -20,4 +20,6 @@ dependencies {
 
     // Test
     testImplementation 'junit:junit:4.13.1'
+    testImplementation project(':api:fake')
+    testImplementation project(':db:fake')
 }

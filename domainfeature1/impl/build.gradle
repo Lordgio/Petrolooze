@@ -19,4 +19,5 @@ dependencies {
 
     // Test
     testImplementation 'junit:junit:4.13.1'
+    testImplementation project(':datasourcefeature1:fake')
 }
