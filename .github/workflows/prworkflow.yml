@@ -26,16 +26,19 @@ jobs:
 
       - name: Run detekt
         run: ./gradlew detekt
+        if: ${{ success() }}
 
       - name: Run Android Lint
         run: ./gradlew lintDebug
+        if: ${{ success() }}
 
       - name: Run unit tests
         run: ./gradlew testDebugUnitTest
+        if: ${{ success() }}
 
       - name: Publish unit test results
         uses: EnricoMi/publish-unit-test-result-action@v1.3
-        if: always()
+        if: ${{ success() }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           check_name: Unit Test Results
