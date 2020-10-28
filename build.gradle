@@ -6,12 +6,12 @@ buildscript {
     }
     dependencies {
         // Fix for https://github.com/cashapp/sqldelight/issues/2058
-        classpath "xml-apis:xml-apis:1.4.01"
 
-        classpath "com.android.tools.build:gradle:4.2.0-alpha14"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.10"
-        classpath 'com.squareup.sqldelight:gradle-plugin:1.4.4'
-        classpath 'com.google.dagger:hilt-android-gradle-plugin:2.28-alpha'
+        classpath Libs.xml_apis
+        classpath Libs.com_android_tools_build_gradle
+        classpath Libs.kotlin_gradle_plugin
+        classpath Libs.gradle_plugin
+        classpath Libs.hilt_android_gradle_plugin
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -20,6 +20,7 @@ buildscript {
 
 plugins {
     id 'io.gitlab.arturbosch.detekt' version '1.14.2'
+    id 'de.fayard.buildSrcVersions' version '0.7.0'
 }
 
 allprojects {

@@ -16,10 +16,10 @@ dependencies {
     implementation project(':db:public')
 
     // Kotlin
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.4.10'
+    implementation Libs.kotlin_stdlib
 
     // Test
-    testImplementation 'junit:junit:4.13.1'
+    testImplementation Libs.kotlin_stdlib
     testImplementation project(':api:fake')
     testImplementation project(':db:fake')
 }
