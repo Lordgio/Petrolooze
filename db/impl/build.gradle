@@ -12,10 +12,10 @@ android {
         minSdkVersion 23
         targetSdkVersion 30
         versionCode 1
-        versionName "1.0"
+        versionName '1.0'
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles "consumer-rules.pro"
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        consumerProguardFiles 'consumer-rules.pro'
     }
 
     buildTypes {
@@ -33,6 +33,14 @@ android {
     }
 }
 
+sqldelight {
+    PetroloozeDB {
+        packageName = 'dev.xxxxx.db.impl'
+        sourceFolders = ['db']
+        schemaOutputDirectory = file('src/main/db/schemas')
+    }
+}
+
 dependencies {
     // Modules
     implementation project(':db:public')
@@ -40,9 +48,20 @@ dependencies {
     // Kotlin
     implementation Libs.kotlin_stdlib
 
+    // DB
+    implementation 'com.squareup.sqldelight:coroutines-extensions-jvm:1.4.3'
+
     // Test
     testImplementation Libs.junit
 
     // AndroidTest
     androidTestImplementation Libs.junit_ktx
+
+    // Test DB implementation
+    testImplementation 'com.squareup.sqldelight:sqlite-driver:1.4.3'
+    testImplementation('org.xerial:sqlite-jdbc:3.8.10.2') {
+        // Override the version of sqlite used by sqlite-driver to match Android API 23
+        because("This is the version that matches min Sdk API 23")
+        force = true
+    }
 }

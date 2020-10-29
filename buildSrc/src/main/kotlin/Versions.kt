@@ -60,7 +60,7 @@ object Versions {
 
     const val core_ktx: String = "1.5.0-alpha04"
 
-    const val xml_apis: String = "2.0.2"
+    const val xml_apis: String = "1.4.01"
 
     const val junit: String = "4.13.1"
 
