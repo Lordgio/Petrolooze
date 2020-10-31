@@ -15,9 +15,9 @@ dependencies {
     implementation project(':datasourcefeature1:public')
 
     // Kotlin
-    implementation Libs.kotlin_stdlib
+    implementation Kotlin.STDLIB
 
     // Test
-    testImplementation Libs.junit
+    testImplementation Testing.JUNIT
     testImplementation project(':datasourcefeature1:fake')
 }

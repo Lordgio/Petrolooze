@@ -14,5 +14,5 @@ dependencies {
     implementation project(':db:public')
 
     // Kotlin
-    implementation Libs.kotlin_stdlib
+    implementation Kotlin.STDLIB
 }

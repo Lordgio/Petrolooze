@@ -64,23 +64,23 @@ dependencies {
     implementation project(':domainfeature1:impl')
 
     // Kotlin
-    implementation Libs.kotlin_stdlib
+    implementation Kotlin.STDLIB
 
     // Android
-    implementation Libs.core_ktx
-    implementation Libs.appcompat
+    implementation Android.APP_CORE
+    implementation Android.APP_COMPAT
 
     // Hilt
-    implementation Libs.hilt_android
-    kapt Libs.hilt_android_compiler
+    implementation Other.HILT
+    kapt Other.HILT_COMPILER
 
     // Test
-    testImplementation Libs.junit
-    androidTestImplementation Libs.junit_ktx
-    androidTestImplementation Libs.espresso_core
-    androidTestImplementation Libs.ui_test
-    androidTestImplementation Libs.hilt_android_testing
-    kaptAndroidTest Libs.hilt_android_compiler
+    testImplementation Testing.JUNIT
+    androidTestImplementation Testing.JUNIT_KTX
+    androidTestImplementation Testing.ESPRESSO
+    androidTestImplementation Testing.COMPOSE_TESTS
+    androidTestImplementation Testing.HILT_TESTS
+    kaptAndroidTest Other.HILT_COMPILER
 
     // Test modules
     testImplementation project(':api:fake')

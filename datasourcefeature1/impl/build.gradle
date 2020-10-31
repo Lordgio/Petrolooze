@@ -16,10 +16,10 @@ dependencies {
     implementation project(':db:public')
 
     // Kotlin
-    implementation Libs.kotlin_stdlib
+    implementation Kotlin.STDLIB
 
     // Test
-    testImplementation Libs.kotlin_stdlib
+    testImplementation Testing.JUNIT
     testImplementation project(':api:fake')
     testImplementation project(':db:fake')
 }

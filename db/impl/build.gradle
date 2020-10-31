@@ -46,20 +46,18 @@ dependencies {
     implementation project(':db:public')
 
     // Kotlin
-    implementation Libs.kotlin_stdlib
+    implementation Kotlin.STDLIB
 
     // DB
-    implementation 'com.squareup.sqldelight:coroutines-extensions-jvm:1.4.3'
+    implementation Other.SQLDELIGHT_COROUTINES
 
     // Test
-    testImplementation Libs.junit
-
-    // AndroidTest
-    androidTestImplementation Libs.junit_ktx
+    testImplementation Testing.JUNIT
+    androidTestImplementation Testing.JUNIT_KTX
 
     // Test DB implementation
-    testImplementation 'com.squareup.sqldelight:sqlite-driver:1.4.3'
-    testImplementation('org.xerial:sqlite-jdbc:3.8.10.2') {
+    testImplementation Testing.SQLDELIGHT_TEST_DRIVER
+    testImplementation(Testing.SQLDELIGHT_JDBC) {
         // Override the version of sqlite used by sqlite-driver to match Android API 23
         because("This is the version that matches min Sdk API 23")
         force = true

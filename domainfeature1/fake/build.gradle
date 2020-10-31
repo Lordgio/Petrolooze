@@ -14,5 +14,5 @@ dependencies {
     implementation project(':domainfeature1:public')
 
     // Kotlin
-    implementation Libs.kotlin_stdlib
+    implementation Kotlin.STDLIB
 }

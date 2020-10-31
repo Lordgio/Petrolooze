@@ -37,33 +37,33 @@ dependencies {
     implementation project(':domainfeature1:public')
 
     // Kotlin
-    implementation Libs.kotlin_stdlib
+    implementation Kotlin.STDLIB
 
     // Android
-    implementation Libs.core_ktx
-    implementation Libs.appcompat
-    implementation Libs.fragment_ktx
+    implementation Android.APP_CORE
+    implementation Android.APP_COMPAT
+    implementation Android.FRAGMENT
 
     // UI
-    implementation Libs.com_google_android_material_material
-    implementation Libs.constraintlayout
-    implementation Libs.recyclerview
+    implementation Android.MATERIAL_UI
+    implementation Android.CONSTRAINT_LAYOUT
+    implementation Android.RECYCLER_VIEW
 
     // Compose
-    implementation Libs.ui
-    implementation Libs.ui_tooling
-    implementation Libs.foundation
-    implementation Libs.androidx_compose_material_material
-    implementation Libs.material_icons_core
-    implementation Libs.material_icons_extended
-    implementation Libs.runtime_livedata
+    implementation Android.COMPOSE_UI
+    implementation Android.COMPOSE_TOOLING
+    implementation Android.COMPOSE_FOUNDATION
+    implementation Android.COMPOSE_MATERIAL
+    implementation Android.COMPOSE_ICONS
+    implementation Android.COMPOSE_ICONS_EXT
+    implementation Android.COMPOSE_LIVEDATA
 
     // Test
-    testImplementation Libs.junit
+    testImplementation Testing.JUNIT
     testImplementation project(':domainfeature1:fake')
 
     // AndroidTest
-    androidTestImplementation Libs.junit_ktx
-    androidTestImplementation Libs.espresso_core
-    androidTestImplementation Libs.ui_test
+    androidTestImplementation Testing.JUNIT_KTX
+    androidTestImplementation Testing.ESPRESSO
+    androidTestImplementation Testing.COMPOSE_TESTS
 }

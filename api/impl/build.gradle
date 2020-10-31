@@ -38,20 +38,19 @@ dependencies {
     implementation project(':api:public')
 
     // Kotlin
-    implementation Libs.kotlin_stdlib
+    implementation Kotlin.STDLIB
 
     // Retrofit
-    implementation Libs.retrofit
-    implementation Libs.converter_moshi
+    implementation Other.RETROFIT
+    implementation Other.RETROFIT_MOSHI
 
     // Moshi
-    kapt Libs.moshi_kotlin_codegen
+    kapt Other.MOSHI
 
     // Test
-    testImplementation Libs.junit
+    testImplementation Testing.JUNIT
 
     // AndroidTest
-    androidTestImplementation Libs.junit_ktx
-    androidTestImplementation Libs.espresso_core
-    androidTestImplementation Libs.ui_test
+    androidTestImplementation Testing.JUNIT_KTX
+    androidTestImplementation Testing.ESPRESSO
 }

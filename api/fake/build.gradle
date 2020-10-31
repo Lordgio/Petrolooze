@@ -14,5 +14,5 @@ dependencies {
     implementation project(':api:public')
 
     // Kotlin
-    implementation Libs.kotlin_stdlib
+    implementation Kotlin.STDLIB
 }

@@ -28,9 +28,9 @@ jobs:
         run: ./gradlew detekt
         if: ${{ success() }}
 
-      - name: Run Android Lint
-        run: ./gradlew lintDebug
-        if: ${{ success() }}
+#     - name: Run Android Lint
+#       run: ./gradlew lintDebug
+#       if: ${{ success() }}
 
       - name: Run unit tests
         run: ./gradlew testDebugUnitTest

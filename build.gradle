@@ -7,11 +7,11 @@ buildscript {
     dependencies {
         // Fix for https://github.com/cashapp/sqldelight/issues/2058
 
-        classpath Libs.xml_apis
-        classpath Libs.com_android_tools_build_gradle
-        classpath Libs.kotlin_gradle_plugin
-        classpath Libs.gradle_plugin
-        classpath Libs.hilt_android_gradle_plugin
+        classpath Other.XML_APIS
+        classpath Android.GRADLE_PLUGIN
+        classpath Kotlin.GRADLE_PLUGIN
+        classpath Other.SQLDELIGHT_PLUGIN
+        classpath Other.HILT_PLUGIN
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
