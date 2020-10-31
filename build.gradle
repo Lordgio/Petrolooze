@@ -20,7 +20,6 @@ buildscript {
 
 plugins {
     id 'io.gitlab.arturbosch.detekt' version '1.14.2'
-    id 'de.fayard.buildSrcVersions' version '0.7.0'
 }
 
 allprojects {

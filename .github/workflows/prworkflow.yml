@@ -36,6 +36,18 @@ jobs:
         run: ./gradlew testDebugUnitTest
         if: ${{ success() }}
 
+      - name: Upload to Codecov
+        if: ${{ success() }}
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: ./coverage.xml # optional
+          files: ./coverage1.xml,./coverage2.xml # optional
+          flags: unittests # optional
+          name: codecov-umbrella # optional
+          fail_ci_if_error: false # optional (default = false)
+          verbose: true # optional (default = false)
+
       - name: Publish unit test results
         uses: EnricoMi/publish-unit-test-result-action@v1.3
         if: ${{ success() }}
