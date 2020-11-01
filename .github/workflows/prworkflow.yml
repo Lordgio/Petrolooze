@@ -36,7 +36,7 @@ jobs:
         run: ./gradlew testDebugUnitTest
         if: ${{ success() }}
 
-      - name: Run unit tests
+      - name: Run jacoco coverage
           run: ./gradlew clean jacocoTestReport
           if: ${{ success() }}
 
