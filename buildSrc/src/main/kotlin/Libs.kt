@@ -74,4 +74,7 @@ object Other {
 
     // Detekt
     const val DETEKT = "io.gitlab.arturbosch.detekt:io.gitlab.arturbosch.detekt.gradle.plugin:${Versions.DETEKT}"
+
+    //Jacoco
+    const val JACOCO = "org.jacoco:org.jacoco.core:${Versions.JACOCO}"
 }
