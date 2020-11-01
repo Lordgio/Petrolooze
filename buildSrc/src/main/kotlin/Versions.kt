@@ -31,4 +31,5 @@ object Versions {
     const val DETEKT: String = "1.14.2"
     const val MOSHI: String = "1.11.0"
     const val XML_APIS: String = "1.4.01"
+    const val JACOCO: String = "0.8.5"
 }
