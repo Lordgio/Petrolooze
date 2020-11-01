@@ -3,12 +3,6 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'io.gitlab.arturbosch.detekt'
-    id 'jacoco'
-}
-
-jacoco {
-    // You may modify the Jacoco version here
-    toolVersion = Versions.JACOCO
 }
 
 /**

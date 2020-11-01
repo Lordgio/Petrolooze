@@ -4,12 +4,6 @@ plugins {
     id 'kotlin-kapt'
     id 'io.gitlab.arturbosch.detekt'
     id 'dagger.hilt.android.plugin'
-    id 'jacoco'
-}
-
-jacoco {
-    // You may modify the Jacoco version here
-    toolVersion = Versions.JACOCO
 }
 
 /**
