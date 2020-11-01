@@ -32,9 +32,9 @@ jobs:
 #       run: ./gradlew lintDebug
 #       if: ${{ success() }}
 
-      - name: Run unit tests
-        run: ./gradlew testDebugUnitTest
-        if: ${{ success() }}
+#      - name: Run unit tests
+#        run: ./gradlew testDebugUnitTest
+#        if: ${{ success() }}
 
       - name: Run jacoco coverage
         run: ./gradlew clean jacocoTestReport
