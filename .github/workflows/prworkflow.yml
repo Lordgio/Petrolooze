@@ -36,9 +36,9 @@ jobs:
         run: ./gradlew testDebugUnitTest
         if: ${{ success() }}
 
-#      - name: Run jacoco coverage
-#        run: ./gradlew clean jacocoTestReport
-#        if: ${{ success() }}
+      - name: Run jacoco coverage
+        run: ./gradlew clean jacocoTestReport
+        if: ${{ success() }}
 
       - name: Upload to Codecov
         if: ${{ success() }}
