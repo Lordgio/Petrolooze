@@ -1,6 +1,7 @@
 name: PR Workflow
 # Run this workflow every time a new PR is opened to the declared branches
 on:
+  workflow_dispatch:
   pull_request:
     types: [ opened, synchronize, reopened ]
     branches:
