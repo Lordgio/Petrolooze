@@ -1,8 +1,12 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
-    id "io.gitlab.arturbosch.detekt"
+    id 'kotlin-kapt'
+    id 'io.gitlab.arturbosch.detekt'
+    id 'dagger.hilt.android.plugin'
 }
+
+apply from: '../jacoco.gradle'
 
 android {
     compileSdkVersion 30
@@ -19,11 +23,13 @@ android {
     }
 
     buildFeatures {
-        compose true
         viewBinding true
     }
 
     buildTypes {
+        debug {
+            testCoverageEnabled true
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
@@ -33,43 +39,54 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = '1.8'
-        useIR = true
     }
 
-    composeOptions {
-        kotlinCompilerVersion '1.4.0'
-        kotlinCompilerExtensionVersion '1.00-alpha04'
+    packagingOptions {
+        exclude 'META-INF/fake.kotlin_module'
+        exclude 'META-INF/impl.kotlin_module'
+        exclude 'META-INF/public.kotlin_module'
     }
 }
 
 dependencies {
+    // Public modules
+    implementation project(':api:public')
+    implementation project(':datasourcefeature1:public')
+    implementation project(':db:public')
+    implementation project(':domainfeature1:public')
+    implementation project(':feature1')
+
+    // Impl modules
+    implementation project(':api:impl')
+    implementation project(':datasourcefeature1:impl')
+    implementation project(':db:impl')
+    implementation project(':domainfeature1:impl')
+
     // Kotlin
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.4.10"
+    implementation Kotlin.STDLIB
 
     // Android
-    implementation 'androidx.core:core-ktx:1.3.2'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'androidx.fragment:fragment-ktx:1.3.0-beta01'
+    implementation Android.APP_CORE
+    implementation Android.APP_COMPAT
 
-    // UI
-    implementation 'com.google.android.material:material:1.2.1'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
-    implementation 'androidx.recyclerview:recyclerview:1.2.0-alpha06'
-
-    // Compose
-    implementation 'androidx.compose.ui:ui:1.0.0-alpha04'
-    implementation 'androidx.ui:ui-tooling:1.0.0-alpha04'
-    implementation 'androidx.compose.foundation:foundation:1.0.0-alpha04'
-    implementation 'androidx.compose.material:material:1.0.0-alpha04'
-    implementation 'androidx.compose.material:material-icons-core:1.0.0-alpha04'
-    implementation 'androidx.compose.material:material-icons-extended:1.0.0-alpha04'
-    implementation 'androidx.compose.runtime:runtime-livedata:1.0.0-alpha04'
+    // Hilt
+    implementation Other.HILT
+    kapt Other.HILT_COMPILER
 
     // Test
-    testImplementation 'junit:junit:4.13.1'
-    androidTestImplementation 'androidx.test.ext:junit-ktx:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-    androidTestImplementation 'androidx.ui:ui-test:1.0.0-alpha04'
+    testImplementation Testing.JUNIT
+    androidTestImplementation Testing.JUNIT_KTX
+    androidTestImplementation Testing.ESPRESSO
+    androidTestImplementation Testing.COMPOSE_TESTS
+    androidTestImplementation Testing.HILT_TESTS
+    kaptAndroidTest Other.HILT_COMPILER
+
+    // Test modules
+    testImplementation project(':api:fake')
+    testImplementation project(':datasourcefeature1:fake')
+    testImplementation project(':db:fake')
+    testImplementation project(':domainfeature1:fake')
 }

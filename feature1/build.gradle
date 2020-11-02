@@ -1,0 +1,71 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'io.gitlab.arturbosch.detekt'
+}
+
+apply from: '../jacoco.gradle'
+
+android {
+    compileSdkVersion 30
+
+    defaultConfig {
+        minSdkVersion 23
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    // Modules
+    implementation project(':domainfeature1:public')
+
+    // Kotlin
+    implementation Kotlin.STDLIB
+
+    // Android
+    implementation Android.APP_CORE
+    implementation Android.APP_COMPAT
+    implementation Android.FRAGMENT
+
+    // UI
+    implementation Android.MATERIAL_UI
+    implementation Android.CONSTRAINT_LAYOUT
+    implementation Android.RECYCLER_VIEW
+
+    // Compose
+    implementation Android.COMPOSE_UI
+    implementation Android.COMPOSE_TOOLING
+    implementation Android.COMPOSE_FOUNDATION
+    implementation Android.COMPOSE_MATERIAL
+    implementation Android.COMPOSE_ICONS
+    implementation Android.COMPOSE_ICONS_EXT
+    implementation Android.COMPOSE_LIVEDATA
+
+    // Test
+    testImplementation Testing.JUNIT
+    testImplementation project(':domainfeature1:fake')
+
+    // AndroidTest
+    androidTestImplementation Testing.JUNIT_KTX
+    androidTestImplementation Testing.ESPRESSO
+    androidTestImplementation Testing.COMPOSE_TESTS
+}

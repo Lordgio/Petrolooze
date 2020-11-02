@@ -1,0 +1,67 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'io.gitlab.arturbosch.detekt'
+    id 'com.squareup.sqldelight'
+}
+
+apply from: '../../jacoco.gradle'
+
+android {
+    compileSdkVersion 30
+
+    defaultConfig {
+        minSdkVersion 23
+        targetSdkVersion 30
+        versionCode 1
+        versionName '1.0'
+
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+sqldelight {
+    PetroloozeDB {
+        packageName = 'dev.xxxxx.db.impl'
+        sourceFolders = ['db']
+        schemaOutputDirectory = file('src/main/db/schemas')
+    }
+}
+
+dependencies {
+    // Modules
+    implementation project(':db:public')
+
+    // Kotlin
+    implementation Kotlin.STDLIB
+
+    // DB
+    implementation Other.SQLDELIGHT_COROUTINES
+
+    // Test
+    testImplementation Testing.JUNIT
+    androidTestImplementation Testing.JUNIT_KTX
+
+    // Test DB implementation
+    testImplementation Testing.SQLDELIGHT_TEST_DRIVER
+    testImplementation(Testing.SQLDELIGHT_JDBC) {
+        // Override the version of sqlite used by sqlite-driver to match Android API 23
+        because("This is the version that matches min Sdk API 23")
+        force = true
+    }
+}

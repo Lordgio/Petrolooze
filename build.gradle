@@ -5,8 +5,14 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:4.2.0-alpha13"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.10"
+        // Fix for https://github.com/cashapp/sqldelight/issues/2058
+
+        classpath Other.XML_APIS
+        classpath Android.GRADLE_PLUGIN
+        classpath Kotlin.GRADLE_PLUGIN
+        classpath Other.SQLDELIGHT_PLUGIN
+        classpath Other.HILT_PLUGIN
+        classpath Other.JACOCO
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -14,7 +20,7 @@ buildscript {
 }
 
 plugins {
-    id "io.gitlab.arturbosch.detekt" version "1.14.1"
+    id 'io.gitlab.arturbosch.detekt' version '1.14.2'
 }
 
 allprojects {
