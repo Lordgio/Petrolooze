@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!--Top level DayNight theme to be used in AndroidManifest.xml-->
+    <style name="Base.Theme.Petrolooze" parent="Base.Theme.Petrolooze.All">
+        <!--Material color attributes (dark theme) -->
+        <item name="colorPrimary">@color/md_indigo_600</item>
+        <item name="colorPrimaryVariant">@color/md_indigo_900</item>
+        <item name="colorSecondary">@color/md_deep_orange_600</item>
+        <item name="colorSecondaryVariant">@color/md_deep_orange_900</item>
+        <item name="android:colorBackground">@color/md_grey_800</item>
+        <item name="colorSurface">@color/md_grey_900</item>
+        <item name="colorError">@color/md_red_700</item>
+        <item name="colorOnPrimary">@color/md_grey_400</item>
+        <item name="colorOnSecondary">@color/md_grey_400</item>
+        <item name="colorOnBackground">@color/md_grey_200</item>
+        <item name="colorOnSurface">@color/md_grey_200</item>
+        <item name="colorOnError">@color/md_grey_200</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+        <item name="android:windowLightNavigationBar" tools:ignore="NewApi">false</item>
+    </style>
+</resources>

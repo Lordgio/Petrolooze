@@ -48,6 +48,9 @@ android {
         exclude 'META-INF/fake.kotlin_module'
         exclude 'META-INF/impl.kotlin_module'
         exclude 'META-INF/public.kotlin_module'
+        exclude 'META-INF/impl_debug.kotlin_module'
+        exclude 'META-INF/fake_debug.kotlin_module'
+        exclude 'META-INF/public_debug.kotlin_module'
     }
 }
 
@@ -64,6 +67,9 @@ dependencies {
     implementation project(':datasourcefeature1:impl')
     implementation project(':db:impl')
     implementation project(':domainfeature1:impl')
+
+    // Helpers
+    implementation project(':utils:uicomponents')
 
     // Kotlin
     implementation Kotlin.STDLIB
