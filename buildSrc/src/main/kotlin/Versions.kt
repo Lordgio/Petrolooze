@@ -1,3 +1,4 @@
+import org.gradle.api.internal.tasks.SnapshotTaskInputsBuildOperationResult
 import kotlin.String
 import org.gradle.plugin.use.PluginDependenciesSpec
 import org.gradle.plugin.use.PluginDependencySpec
@@ -16,6 +17,7 @@ object Versions {
     const val MATERIAL: String = "1.3.0-alpha03"
     const val CONSTRAINT_LAYOUT: String = "2.0.3"
     const val RECYCLER_VIEW: String = "1.2.0-alpha06"
+    const val NAVIGATION: String = "2.3.1"
 
     // Testing
     const val JUNIT: String = "4.13.1"

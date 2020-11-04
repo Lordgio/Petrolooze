@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-kapt'
     id 'io.gitlab.arturbosch.detekt'
     id 'dagger.hilt.android.plugin'
+    id 'androidx.navigation.safeargs.kotlin'
 }
 
 apply from: '../jacoco.gradle'
@@ -81,6 +82,10 @@ dependencies {
     // Hilt
     implementation Other.HILT
     kapt Other.HILT_COMPILER
+
+    // Navigation
+    implementation Android.NAV_FRAGMENT
+    implementation Android.NAV_UI
 
     // Test
     testImplementation Testing.JUNIT

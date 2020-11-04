@@ -2,6 +2,7 @@ plugins {
     id 'com.android.library'
     id 'kotlin-android'
     id 'io.gitlab.arturbosch.detekt'
+    id 'androidx.navigation.safeargs.kotlin'
 }
 
 apply from: '../jacoco.gradle'
@@ -59,6 +60,10 @@ dependencies {
     implementation Android.COMPOSE_ICONS
     implementation Android.COMPOSE_ICONS_EXT
     implementation Android.COMPOSE_LIVEDATA
+
+    // Navigation
+    implementation Android.NAV_FRAGMENT
+    implementation Android.NAV_UI
 
     // Test
     testImplementation Testing.JUNIT
