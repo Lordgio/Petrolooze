@@ -14,8 +14,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        setStartNavigation(binding.navHostFragment as NavHostFragment)
+        setStartNavigation(supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment)
     }
 
     private fun setStartNavigation(host: NavHostFragment) {
