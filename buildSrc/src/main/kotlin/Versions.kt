@@ -9,7 +9,7 @@ object Versions {
     const val KOTLIN: String = "1.4.10"
 
     // Android
-    const val AGP: String = "4.2.0-alpha15"
+    const val AGP: String = "4.2.0-alpha16"
     const val APP_CORE: String = "1.5.0-alpha04"
     const val APP_COMPAT: String = "1.3.0-alpha02"
     const val FRAGMENT: String = "1.3.0-beta01"

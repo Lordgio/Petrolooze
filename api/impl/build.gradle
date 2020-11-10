@@ -47,7 +47,12 @@ dependencies {
     implementation Other.RETROFIT_MOSHI
 
     // Moshi
-    kapt Other.MOSHI
+    implementation Other.MOSHI
+    kapt Other.MOSHI_KAPT
+
+    // Dagger
+    implementation Other.HILT
+    kapt Other.HILT_COMPILER
 
     // Test
     testImplementation Testing.JUNIT

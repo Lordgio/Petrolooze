@@ -70,7 +70,8 @@ object Other {
     const val RETROFIT_MOSHI = "com.squareup.retrofit2:converter-moshi:${Versions.RETROFIT}"
 
     // Moshi
-    const val MOSHI = "com.squareup.moshi:moshi-kotlin-codegen:${Versions.MOSHI}"
+    const val MOSHI = "com.squareup.moshi:moshi:${Versions.MOSHI}"
+    const val MOSHI_KAPT = "com.squareup.moshi:moshi-kotlin-codegen:${Versions.MOSHI}"
 
     // Hilt
     const val HILT = "com.google.dagger:hilt-android:${Versions.DAGGER}"
