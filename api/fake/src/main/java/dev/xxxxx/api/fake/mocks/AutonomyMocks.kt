@@ -2,7 +2,7 @@ package dev.xxxxx.api.fake.mocks
 
 import dev.xxxxx.api.data.Autonomy
 
-object MockedAutonomies {
+object AutonomyMocks {
     val autonomy1 = Autonomy(
         id = "1",
         name = ""

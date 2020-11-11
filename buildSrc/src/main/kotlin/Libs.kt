@@ -3,6 +3,8 @@ import kotlin.String
 object Kotlin {
     const val GRADLE_PLUGIN = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.KOTLIN}"
     const val STDLIB = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.KOTLIN}"
+    const val COROUTINES_CORE = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.COROUTINES}"
+    const val COROUTINES_ANDROID = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.COROUTINES}"
 }
 
 object Android {
@@ -54,6 +56,12 @@ object Testing {
     // SQLDelight
     const val SQLDELIGHT_TEST_DRIVER = "com.squareup.sqldelight:sqlite-driver:${Versions.SQLDELIGHT}"
     const val SQLDELIGHT_JDBC = "org.xerial:sqlite-jdbc:${Versions.SQLDELIGHT_TEST_DRIVER}"
+
+    // Coroutines
+    const val COROUTINES = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.COROUTINES}"
+
+    // Mockk
+    const val MOCKK = "io.mockk:mockk:${Versions.MOCKK}"
 }
 
 object Other {

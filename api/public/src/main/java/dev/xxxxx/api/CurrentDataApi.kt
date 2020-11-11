@@ -1,6 +1,11 @@
 package dev.xxxxx.api
 
-import dev.xxxxx.api.data.*
+import dev.xxxxx.api.data.Autonomy
+import dev.xxxxx.api.data.City
+import dev.xxxxx.api.data.Product
+import dev.xxxxx.api.data.Province
+import dev.xxxxx.api.data.Station
+
 
 interface CurrentDataApi {
 

@@ -2,7 +2,7 @@ package dev.xxxxx.api.fake.mocks
 
 import dev.xxxxx.api.data.Product
 
-object MockedProducts {
+object ProductMocks {
     val product1 = Product(
         id = "1",
         name = "",

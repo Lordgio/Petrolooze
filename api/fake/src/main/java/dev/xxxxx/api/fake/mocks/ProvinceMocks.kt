@@ -1,31 +1,26 @@
 package dev.xxxxx.api.fake.mocks
 
-import dev.xxxxx.api.data.City
+import dev.xxxxx.api.data.Province
 
-object MockedCities {
-    val city1 = City(
-        id = "1",
+object ProvinceMocks {
+
+    val province1 = Province(
         provinceId = "1",
         autonomyId = "1",
-        name = "",
         provinceName = "",
         autonomyName = ""
     )
 
-    val city2 = City(
-        id = "2",
+    val province2 = Province(
         provinceId = "2",
         autonomyId = "2",
-        name = "",
         provinceName = "",
         autonomyName = ""
     )
 
-    val city3 = City(
-        id = "3",
+    val province3 = Province(
         provinceId = "3",
         autonomyId = "3",
-        name = "",
         provinceName = "",
         autonomyName = ""
     )

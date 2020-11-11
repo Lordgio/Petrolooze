@@ -7,6 +7,7 @@ object Versions {
 
     // Kotlin
     const val KOTLIN: String = "1.4.10"
+    const val COROUTINES: String = "1.4.1"
 
     // Android
     const val AGP: String = "4.2.0-alpha16"
@@ -23,6 +24,7 @@ object Versions {
     const val JUNIT: String = "4.13.1"
     const val JUNIT_KTX: String = "1.1.3-alpha02"
     const val ESPRESSO: String = "3.4.0-alpha02"
+    const val MOCKK: String = "1.10.2"
 
     // Other
     const val GRADLE: String = "6.7"

@@ -21,8 +21,13 @@ import javax.inject.Singleton
 @InstallIn(ApplicationComponent::class)
 class ApiModule {
 
+    companion object {
+        private const val TIMEOUT = 30L
+    }
+
     @Provides
-    fun provideBaseUrl(): String = "https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/"
+    fun provideBaseUrl(): String =
+        "https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/"
 
     @Provides
     @Singleton
@@ -31,13 +36,14 @@ class ApiModule {
     @Provides
     @Singleton
     fun provideRestClient(): OkHttpClient = OkHttpClient.Builder()
-        .readTimeout(30L, TimeUnit.SECONDS)
-        .connectTimeout(30L, TimeUnit.SECONDS)
+        .readTimeout(TIMEOUT, TimeUnit.SECONDS)
+        .connectTimeout(TIMEOUT, TimeUnit.SECONDS)
         .build()
 
     @Provides
     @Singleton
-    fun provideRetrofitInstance(baseUrl: String, restClient: OkHttpClient, jsonParser: Moshi): Retrofit = Retrofit.Builder()
+    fun provideRetrofitInstance(baseUrl: String, restClient: OkHttpClient,
+                                jsonParser: Moshi): Retrofit = Retrofit.Builder()
         .baseUrl(baseUrl)
         .client(restClient)
         .addConverterFactory(MoshiConverterFactory.create(jsonParser))
@@ -45,15 +51,18 @@ class ApiModule {
 
     @Provides
     @Singleton
-    fun provideBaseDataClient(retrofit: Retrofit): BaseDataClient = retrofit.create(BaseDataClient::class.java)
+    fun provideBaseDataClient(retrofit: Retrofit): BaseDataClient =
+        retrofit.create(BaseDataClient::class.java)
 
     @Provides
     @Singleton
-    fun provideCurrentDataClient(retrofit: Retrofit): CurrentDataClient = retrofit.create(CurrentDataClient::class.java)
+    fun provideCurrentDataClient(retrofit: Retrofit): CurrentDataClient =
+        retrofit.create(CurrentDataClient::class.java)
 
     @Provides
     @Singleton
-    fun provideHistoricalDataClient(retrofit: Retrofit): HistoricalDataClient = retrofit.create(HistoricalDataClient::class.java)
+    fun provideHistoricalDataClient(retrofit: Retrofit): HistoricalDataClient =
+        retrofit.create(HistoricalDataClient::class.java)
 
     @Provides
     fun provideBaseDataApi(client: BaseDataClient): BaseDataApiImpl = BaseDataApiImpl(client)
