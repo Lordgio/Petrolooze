@@ -56,6 +56,8 @@ dependencies {
     kapt Other.HILT_COMPILER
 
     // Test
+    testImplementation project(':utils:testutils')
+    testImplementation project(':api:fake')
     testImplementation Testing.JUNIT
     testImplementation Testing.COROUTINES
     testImplementation Testing.MOCKK

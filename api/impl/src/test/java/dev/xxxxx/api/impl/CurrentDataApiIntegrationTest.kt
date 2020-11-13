@@ -1,15 +1,16 @@
 package dev.xxxxx.api.impl
 
-import dev.xxxxx.api.data.Autonomy
-import dev.xxxxx.api.data.City
-import dev.xxxxx.api.data.Product
-import dev.xxxxx.api.data.Province
+import dev.xxxxx.api.fake.mocks.AutonomyMocks
+import dev.xxxxx.api.fake.mocks.CityMocks
+import dev.xxxxx.api.fake.mocks.ProductMocks
+import dev.xxxxx.api.fake.mocks.ProvinceMocks
 import dev.xxxxx.api.impl.data.StationResponse
 import dev.xxxxx.api.impl.retrofit.CurrentDataClient
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.TestCoroutineDispatcher
 import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.runBlockingTest
@@ -18,11 +19,13 @@ import org.junit.After
 import org.junit.Before
 import org.junit.Test
 
+@ExperimentalCoroutinesApi
 class CurrentDataApiIntegrationTest {
 
     private val testDispatcher = TestCoroutineDispatcher()
     private val client: CurrentDataClient = mockk()
     private lateinit var api: CurrentDataApiImpl
+    private val mockedResponse = StationResponse("", listOf(), "", "")
 
     @Before
     fun setUp() {
@@ -38,57 +41,57 @@ class CurrentDataApiIntegrationTest {
 
     @Test
     fun `get Stations passes the call to Retrofit correctly`() = runBlockingTest {
-        coEvery { client.getStations() } returns StationResponse("", listOf(), "", "")
+        coEvery { client.getStations() } returns mockedResponse
         api.getAllStations()
         coVerify(exactly = 1) { client.getStations() }
     }
 
     @Test
     fun `get Stations by Autonomy passes the call to Retrofit correctly`() = runBlockingTest {
-        coEvery { client.getStationsByAutonomy("") } returns StationResponse("", listOf(), "", "")
-        api.getStationsByAutonomy(Autonomy("", ""))
-        coVerify(exactly = 1) { client.getStationsByAutonomy("") }
+        coEvery { client.getStationsByAutonomy(any()) } returns mockedResponse
+        api.getStationsByAutonomy(AutonomyMocks.autonomy1)
+        coVerify(exactly = 1) { client.getStationsByAutonomy(any()) }
     }
 
     @Test
     fun `get Stations by Autonomy and Product passes the call to Retrofit correctly`() = runBlockingTest {
-        coEvery { client.getStationsByAutonomyAndProduct("", "") } returns StationResponse("", listOf(), "", "")
-        api.getStationsByAutonomyAndProduct(Autonomy("", ""), Product("", "", ""))
-        coVerify(exactly = 1) { client.getStationsByAutonomyAndProduct("", "") }
+        coEvery { client.getStationsByAutonomyAndProduct(any(), any()) } returns mockedResponse
+        api.getStationsByAutonomyAndProduct(AutonomyMocks.autonomy1, ProductMocks.product1)
+        coVerify(exactly = 1) { client.getStationsByAutonomyAndProduct(any(), any()) }
     }
 
     @Test
     fun `get Stations by City passes the call to Retrofit correctly`() = runBlockingTest {
-        coEvery { client.getStationsByCity("") } returns StationResponse("", listOf(), "", "")
-        api.getStationsByCity(City("", "", "", "", "", ""))
-        coVerify(exactly = 1) { client.getStationsByCity("") }
+        coEvery { client.getStationsByCity(any()) } returns mockedResponse
+        api.getStationsByCity(CityMocks.city1)
+        coVerify(exactly = 1) { client.getStationsByCity(any()) }
     }
 
     @Test
     fun `get Stations by City and Product passes the call to Retrofit correctly`() = runBlockingTest {
-        coEvery { client.getStationsByCityAndProduct("", "") } returns StationResponse("", listOf(), "", "")
-        api.getStationsByCityAndProduct(City("", "", "", "", "", ""), Product("", "", ""))
-        coVerify(exactly = 1) { client.getStationsByCityAndProduct("", "") }
+        coEvery { client.getStationsByCityAndProduct(any(), any()) } returns mockedResponse
+        api.getStationsByCityAndProduct(CityMocks.city1, ProductMocks.product1)
+        coVerify(exactly = 1) { client.getStationsByCityAndProduct(any(), any()) }
     }
 
     @Test
     fun `get Stations by Product passes the call to Retrofit correctly`() = runBlockingTest {
-        coEvery { client.getStationsByProduct("") } returns StationResponse("", listOf(), "", "")
-        api.getStationsByProduct(Product("", "", ""))
-        coVerify(exactly = 1) { client.getStationsByProduct("") }
+        coEvery { client.getStationsByProduct(any()) } returns mockedResponse
+        api.getStationsByProduct(ProductMocks.product1)
+        coVerify(exactly = 1) { client.getStationsByProduct(any()) }
     }
 
     @Test
     fun `get Stations by Province passes the call to Retrofit correctly`() = runBlockingTest {
-        coEvery { client.getStationsByProvince("") } returns StationResponse("", listOf(), "", "")
-        api.getStationsByProvince(Province("", "", "", ""))
-        coVerify(exactly = 1) { client.getStationsByProvince("") }
+        coEvery { client.getStationsByProvince(any()) } returns mockedResponse
+        api.getStationsByProvince(ProvinceMocks.province1)
+        coVerify(exactly = 1) { client.getStationsByProvince(any()) }
     }
 
     @Test
     fun `get Stations by Province and Product passes the call to Retrofit correctly`() = runBlockingTest {
-        coEvery { client.getStationsByProvinceAndProduct("", "") } returns StationResponse("", listOf(), "", "")
-        api.getStationsByProvinceAndProduct(Province("", "", "", ""), Product("", "", ""))
-        coVerify(exactly = 1) { client.getStationsByProvinceAndProduct("", "") }
+        coEvery { client.getStationsByProvinceAndProduct(any(), any()) } returns mockedResponse
+        api.getStationsByProvinceAndProduct(ProvinceMocks.province1, ProductMocks.product1)
+        coVerify(exactly = 1) { client.getStationsByProvinceAndProduct(any(), any()) }
     }
 }
