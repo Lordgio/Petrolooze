@@ -1,6 +1,6 @@
 package dev.xxxxx.api.data
 
-data class Station(
+public data class Station(
     val postalCode: String,
     val address: String,
     val timetable: String,

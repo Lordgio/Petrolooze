@@ -1,6 +1,6 @@
 package dev.xxxxx.api.data
 
-data class Autonomy(
+public data class Autonomy(
     val id: String,
     val name: String
 )

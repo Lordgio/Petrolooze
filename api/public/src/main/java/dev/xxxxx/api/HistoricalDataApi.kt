@@ -1,5 +1,5 @@
 package dev.xxxxx.api
 
-interface HistoricalDataApi {
+public interface HistoricalDataApi {
     /* no-op */
 }

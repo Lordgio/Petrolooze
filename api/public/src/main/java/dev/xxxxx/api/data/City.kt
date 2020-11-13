@@ -1,6 +1,6 @@
 package dev.xxxxx.api.data
 
-data class City (
+public data class City (
     val id: String,
     val provinceId: String,
     val autonomyId: String,

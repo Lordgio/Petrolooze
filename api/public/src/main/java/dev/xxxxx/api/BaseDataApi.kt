@@ -5,13 +5,13 @@ import dev.xxxxx.api.data.City
 import dev.xxxxx.api.data.Product
 import dev.xxxxx.api.data.Province
 
-interface BaseDataApi {
+public interface BaseDataApi {
 
-    suspend fun getAutonomies(): List<Autonomy>
+    public suspend fun getAutonomies(): List<Autonomy>
 
-    suspend fun getCities(): List<City>
+    public suspend fun getCities(): List<City>
 
-    suspend fun getProducts(): List<Product>
+    public suspend fun getProducts(): List<Product>
 
-    suspend fun getProvinces(): List<Province>
+    public suspend fun getProvinces(): List<Province>
 }

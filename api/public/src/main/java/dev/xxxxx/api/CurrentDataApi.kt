@@ -7,21 +7,21 @@ import dev.xxxxx.api.data.Province
 import dev.xxxxx.api.data.Station
 
 
-interface CurrentDataApi {
+public interface CurrentDataApi {
 
-    suspend fun getAllStations(): List<Station>
+    public suspend fun getAllStations(): List<Station>
 
-    suspend fun getStationsByAutonomy(autonomy: Autonomy): List<Station>
+    public suspend fun getStationsByAutonomy(autonomy: Autonomy): List<Station>
 
-    suspend fun getStationsByAutonomyAndProduct(autonomy: Autonomy, product: Product): List<Station>
+    public suspend fun getStationsByAutonomyAndProduct(autonomy: Autonomy, product: Product): List<Station>
 
-    suspend fun getStationsByCity(city: City): List<Station>
+    public suspend fun getStationsByCity(city: City): List<Station>
 
-    suspend fun getStationsByCityAndProduct(city: City, product: Product): List<Station>
+    public suspend fun getStationsByCityAndProduct(city: City, product: Product): List<Station>
 
-    suspend fun getStationsByProduct(product: Product): List<Station>
+    public suspend fun getStationsByProduct(product: Product): List<Station>
 
-    suspend fun getStationsByProvince(province: Province): List<Station>
+    public suspend fun getStationsByProvince(province: Province): List<Station>
 
-    suspend fun getStationsByProvinceAndProduct(province: Province, product: Product): List<Station>
+    public suspend fun getStationsByProvinceAndProduct(province: Province, product: Product): List<Station>
 }
