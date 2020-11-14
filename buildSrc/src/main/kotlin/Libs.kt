@@ -49,6 +49,7 @@ object Testing {
 
     // Hilt
     const val HILT_TESTS = "com.google.dagger:hilt-android-testing:${Versions.DAGGER}"
+    const val HILT_TEST_COMPILER = "com.google.dagger:hilt-android-compiler:${Versions.DAGGER}"
 
     // Compose
     const val COMPOSE_TESTS = "androidx.ui:ui-test:${Versions.COMPOSE}"

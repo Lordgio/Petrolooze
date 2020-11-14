@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'io.gitlab.arturbosch.detekt'
+    id 'dagger.hilt.android.plugin'
 }
 
 apply from: '../../jacoco.gradle'
@@ -44,8 +45,8 @@ dependencies {
     implementation Kotlin.COROUTINES_CORE
 
     // Retrofit
-    implementation Other.RETROFIT
-    implementation Other.RETROFIT_MOSHI
+    api Other.RETROFIT
+    api Other.RETROFIT_MOSHI
 
     // Moshi
     implementation Other.MOSHI
