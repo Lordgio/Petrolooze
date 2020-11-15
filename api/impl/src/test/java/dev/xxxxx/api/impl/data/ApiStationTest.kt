@@ -11,6 +11,13 @@ class ApiStationTest {
         "13.0", "14.0", "15.0", "16.0",
         "MNOP", "06", "QRST", "07", "17.0")
 
+    private val testStationWithoutNumbers = ApiStation("", "00000", "ABCD",
+        "EFGH", "01", "02", "03", "04", "", "IJKL",
+        "", "05", "", "", "", "", "",
+        "", "", "", "", "", "",
+        "", "","", "MNOP", "06", "QRST",
+        "07", "")
+
     @Test
     fun `test ApiCity data class for coverage`() {
 
@@ -83,5 +90,43 @@ class ApiStationTest {
         Assert.assertEquals(testStation.label, station.label)
         Assert.assertEquals(testStation.saleType, station.saleType)
         Assert.assertEquals(testStation.methylicEsterPercent.toDouble(), station.methylicEsterPercent, 0.0)
+    }
+
+    @Test
+    fun `test ApiCity transform extension function with defaults`() {
+
+        val station = testStationWithoutNumbers.toStation()
+
+        Assert.assertEquals(0.0, station.bioethanolPercent, 0.0)
+        Assert.assertEquals(testStation.postalCode, station.postalCode)
+        Assert.assertEquals(testStation.address, station.address)
+        Assert.assertEquals(testStation.timetable, station.timetable)
+        Assert.assertEquals(testStation.autonomyId, station.autonomyId)
+        Assert.assertEquals(testStation.id, station.id)
+        Assert.assertEquals(testStation.cityId, station.cityId)
+        Assert.assertEquals(testStation.provinceId, station.provinceId)
+        Assert.assertEquals(0L, station.latitude)
+        Assert.assertEquals(testStation.cityName, station.cityName)
+        Assert.assertEquals(0L, station.longitude)
+        Assert.assertEquals(testStation.margin, station.margin)
+        Assert.assertEquals(0.0, station.biodieselPrice, 0.0)
+        Assert.assertEquals(0.0, station.bioethanolPrice, 0.0)
+        Assert.assertEquals(0.0, station.gncPrice, 0.0)
+        Assert.assertEquals(0.0, station.gnlPrice, 0.0)
+        Assert.assertEquals(0.0, station.glpPrice, 0.0)
+        Assert.assertEquals(0.0, station.aGasPrice, 0.0)
+        Assert.assertEquals(0.0, station.bGasPrice, 0.0)
+        Assert.assertEquals(0.0, station.premiumGasPrice, 0.0)
+        Assert.assertEquals(0.0, station.gas95E10Price, 0.0)
+        Assert.assertEquals(0.0, station.gas95E5Price, 0.0)
+        Assert.assertEquals(0.0, station.premiumGas95E5Price, 0.0)
+        Assert.assertEquals(0.0, station.gas98E10Price, 0.0)
+        Assert.assertEquals(0.0, station.gas98E5Price, 0.0)
+        Assert.assertEquals(0.0, station.hydrogenPrice, 0.0)
+        Assert.assertEquals(testStation.provinceName, station.provinceName)
+        Assert.assertEquals(testStation.remision, station.remision)
+        Assert.assertEquals(testStation.label, station.label)
+        Assert.assertEquals(testStation.saleType, station.saleType)
+        Assert.assertEquals(0.0, station.methylicEsterPercent, 0.0)
     }
 }
