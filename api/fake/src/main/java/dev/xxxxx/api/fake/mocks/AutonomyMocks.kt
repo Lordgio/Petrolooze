@@ -4,17 +4,17 @@ import dev.xxxxx.api.data.Autonomy
 
 object AutonomyMocks {
     val autonomy1 = Autonomy(
-        id = "1",
-        name = ""
+        id = "11",
+        name = "Extremadura"
     )
 
     val autonomy2 = Autonomy(
-        id = "2",
-        name = ""
+        id = "18",
+        name = "Ceuta"
     )
 
     val autonomy3 = Autonomy(
-        id = "3",
-        name = ""
+        id = "15",
+        name = "Navarra"
     )
 }
