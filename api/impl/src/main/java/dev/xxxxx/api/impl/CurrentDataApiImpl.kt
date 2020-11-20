@@ -2,8 +2,12 @@ package dev.xxxxx.api.impl
 
 import arrow.core.Either
 import dev.xxxxx.api.CurrentDataApi
-import dev.xxxxx.api.data.*
-import dev.xxxxx.api.impl.data.toAutonomy
+import dev.xxxxx.api.data.Autonomy
+import dev.xxxxx.api.data.City
+import dev.xxxxx.api.data.NetworkError
+import dev.xxxxx.api.data.Product
+import dev.xxxxx.api.data.Province
+import dev.xxxxx.api.data.Station
 import dev.xxxxx.api.impl.data.toStation
 import dev.xxxxx.api.impl.mappers.toNetworkError
 import dev.xxxxx.api.impl.retrofit.CurrentDataClient
