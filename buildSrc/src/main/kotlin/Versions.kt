@@ -36,4 +36,5 @@ object Versions {
     const val MOSHI: String = "1.11.0"
     const val XML_APIS: String = "1.4.01"
     const val JACOCO: String = "0.8.5"
+    const val ARROW: String = "0.11.0"
 }

@@ -92,4 +92,8 @@ object Other {
 
     //Jacoco
     const val JACOCO = "org.jacoco:org.jacoco.core:${Versions.JACOCO}"
+
+    // Arrow
+    const val ARROW_BOM = "io.arrow-kt:arrow-stack:${Versions.ARROW}"
+    const val ARROW_CORE = "io.arrow-kt:arrow-core"
 }
