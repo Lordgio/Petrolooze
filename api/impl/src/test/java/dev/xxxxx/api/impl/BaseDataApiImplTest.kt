@@ -1,9 +1,7 @@
 package dev.xxxxx.api.impl
 
-import dev.xxxxx.api.data.Autonomy
-import dev.xxxxx.api.data.City
-import dev.xxxxx.api.data.Product
-import dev.xxxxx.api.data.Province
+import arrow.core.Either
+import dev.xxxxx.api.data.*
 import dev.xxxxx.api.impl.retrofit.BaseDataClient
 import io.mockk.coEvery
 import io.mockk.mockk
@@ -40,48 +38,60 @@ class BaseDataApiImplTest {
     @Test
     fun `get Autonomies returns correct responses`() = runBlockingTest {
         coEvery { client.getAutonomies() } returns listOf()
-        Assert.assertEquals(listOf<Autonomy>(), api.getAutonomies())
+        Assert.assertEquals(Either.right(listOf<Autonomy>()), api.getAutonomies())
     }
 
     @Test
     fun `get Autonomies throws exception on error responses`() = runBlockingTest {
         coEvery { client.getAutonomies() } throws Exception("Error")
-        assertThrows<Exception>("Error") { api.getAutonomies() }
+        val result = api.getAutonomies()
+        val internal = result.fold({ it }, { it })
+        Assert.assertTrue(result is Either.Left<*>)
+        Assert.assertTrue(internal is NetworkError.GenericError)
     }
 
     @Test
     fun `get Cities returns correct responses`() = runBlockingTest {
         coEvery { client.getCities() } returns listOf()
-        Assert.assertEquals(listOf<City>(), api.getCities())
+        Assert.assertEquals(Either.right(listOf<City>()), api.getCities())
     }
 
     @Test
     fun `get Cities throws exception on error responses`() = runBlockingTest {
         coEvery { client.getCities() } throws Exception("Error")
-        assertThrows<Exception>("Error") { api.getCities() }
+        val result = api.getCities()
+        val internal = result.fold({ it }, { it })
+        Assert.assertTrue(result is Either.Left<*>)
+        Assert.assertTrue(internal is NetworkError.GenericError)
     }
 
     @Test
     fun `get Products returns correct responses`() = runBlockingTest {
         coEvery { client.getProducts() } returns listOf()
-        Assert.assertEquals(listOf<Product>(), api.getProducts())
+        Assert.assertEquals(Either.right(listOf<Product>()), api.getProducts())
     }
 
     @Test
     fun `get Products throws exception on error responses`() = runBlockingTest {
         coEvery { client.getProducts() } throws Exception("Error")
-        assertThrows<Exception>("Error") { api.getProducts() }
+        val result = api.getProducts()
+        val internal = result.fold({ it }, { it })
+        Assert.assertTrue(result is Either.Left<*>)
+        Assert.assertTrue(internal is NetworkError.GenericError)
     }
 
     @Test
     fun `get Provinces returns correct responses`() = runBlockingTest {
         coEvery { client.getProvinces() } returns listOf()
-        Assert.assertEquals(listOf<Province>(), api.getProvinces())
+        Assert.assertEquals(Either.right(listOf<Province>()), api.getProvinces())
     }
 
     @Test
     fun `get Provinces throws exception on error responses`() = runBlockingTest {
         coEvery { client.getProvinces() } throws Exception("Error")
-        assertThrows<Exception>("Error") { api.getProvinces() }
+        val result = api.getProvinces()
+        val internal = result.fold({ it }, { it })
+        Assert.assertTrue(result is Either.Left<*>)
+        Assert.assertTrue(internal is NetworkError.GenericError)
     }
 }
