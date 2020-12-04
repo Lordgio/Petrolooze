@@ -38,6 +38,7 @@ android {
 dependencies {
     // Modules
     implementation project(':domainfeature1:public')
+    implementation project(':utils:uicomponents')
 
     // Kotlin
     implementation Kotlin.STDLIB
