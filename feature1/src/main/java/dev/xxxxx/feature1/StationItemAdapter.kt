@@ -5,11 +5,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.recyclerview.widget.RecyclerView
+import dev.xxxxx.domainfeature1.Station
 import dev.xxxxx.feature1.databinding.StationListItemBinding
 
 class StationItemAdapter(
-        private val items: List<Station>,
-        private val listener: (Station) -> Unit
+    private val items: List<Station>,
+    private val listener: (Station) -> Unit
 ): RecyclerView.Adapter<StationItemAdapter.ViewHolder>() {
 
     override fun getItemCount(): Int = items.size
@@ -28,8 +29,7 @@ class StationItemAdapter(
         fun bind(item: Station, listener: (Station) -> Unit) = with(itemView) {
             with(binding){
                 tvLabel.text = item.label
-                val addressText = "${item.address} - ${item.cityName} - ${item.provinceName}"
-                tvAddress.text = addressText
+                tvAddress.text = item.address
                 tv95Petrol.titleText = item.gas95E5Price
                 tv98Petrol.titleText = item.gas98E5Price
                 tvDiesel.titleText = item.aGasPrice
