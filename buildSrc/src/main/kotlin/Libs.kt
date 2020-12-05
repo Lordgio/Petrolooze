@@ -23,14 +23,14 @@ object Android {
     const val RECYCLER_VIEW = "androidx.recyclerview:recyclerview:${Versions.RECYCLER_VIEW}"
 
     // Compose
-    const val COMPOSE_UI = "androidx.compose.ui:ui:${Versions.COMPOSE}"
-    const val COMPOSE_MATERIAL = "androidx.compose.material:material:${Versions.COMPOSE}"
-    const val COMPOSE_ICONS = "androidx.compose.material:material-icons-core:${Versions.COMPOSE}"
-    const val COMPOSE_ICONS_EXT = "androidx.compose.material:material-icons-extended:${Versions.COMPOSE}"
-    const val COMPOSE_TOOLING = "androidx.ui:ui-tooling:${Versions.COMPOSE}"
-    const val COMPOSE_COMPILER = "androidx.compose.compiler:compiler:${Versions.COMPOSE}"
-    const val COMPOSE_LIVEDATA = "androidx.compose.runtime:runtime-livedata:${Versions.COMPOSE}"
-    const val COMPOSE_FOUNDATION = "androidx.compose.foundation:foundation:${Versions.COMPOSE}"
+//    const val COMPOSE_UI = "androidx.compose.ui:ui:${Versions.COMPOSE}"
+//    const val COMPOSE_MATERIAL = "androidx.compose.material:material:${Versions.COMPOSE}"
+//    const val COMPOSE_ICONS = "androidx.compose.material:material-icons-core:${Versions.COMPOSE}"
+//    const val COMPOSE_ICONS_EXT = "androidx.compose.material:material-icons-extended:${Versions.COMPOSE}"
+//    const val COMPOSE_TOOLING = "androidx.ui:ui-tooling:${Versions.COMPOSE}"
+//    const val COMPOSE_COMPILER = "androidx.compose.compiler:compiler:${Versions.COMPOSE}"
+//    const val COMPOSE_LIVEDATA = "androidx.compose.runtime:runtime-livedata:${Versions.COMPOSE}"
+//    const val COMPOSE_FOUNDATION = "androidx.compose.foundation:foundation:${Versions.COMPOSE}"
 
     // Navigation
     const val NAV_FRAGMENT = "androidx.navigation:navigation-fragment-ktx:${Versions.NAVIGATION}"
@@ -52,7 +52,7 @@ object Testing {
     const val HILT_TEST_COMPILER = "com.google.dagger:hilt-android-compiler:${Versions.DAGGER}"
 
     // Compose
-    const val COMPOSE_TESTS = "androidx.ui:ui-test:${Versions.COMPOSE}"
+//    const val COMPOSE_TESTS = "androidx.ui:ui-test:${Versions.COMPOSE}"
 
     // SQLDelight
     const val SQLDELIGHT_TEST_DRIVER = "com.squareup.sqldelight:sqlite-driver:${Versions.SQLDELIGHT}"

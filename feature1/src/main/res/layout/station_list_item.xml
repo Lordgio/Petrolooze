@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_margin="10dp">
 
 <androidx.constraintlayout.widget.ConstraintLayout
@@ -34,19 +35,19 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvLettering"
+            android:id="@+id/tvLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-            android:text="REPSOL"/>
+            tools:text="REPSOL"/>
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvDirection"
+            android:id="@+id/tvAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="2dp"
             android:textSize="12sp"
-            android:text="Carretera CM-219, 4,9 - MONDÉJAR - GUADALAJARA"/>
+            tools:text="Carretera CM-219, 4,9 - MONDÉJAR - GUADALAJARA"/>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvDistance"
@@ -55,7 +56,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:textSize="14sp"
-            android:text="10 km"
+            tools:text="10 km"
             app:drawableStartCompat="@drawable/ic_near_me"
             app:drawableTint="@color/md_deep_purple_600"
             android:drawablePadding="5dp"/>
@@ -87,7 +88,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="5dp"
                 app:valueText=" Gasolina 95"
-                app:titleText="1,209€" />
+                app:titleText="-,--€" />
 
             <dev.xxxxx.uicomponents.TitleValueTextView
                 android:id="@+id/tv98Petrol"
@@ -97,7 +98,7 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="5dp"
                 app:valueText=" Gasolina 98"
-                app:titleText="1,209€" />
+                app:titleText="-,--€" />
 
             <dev.xxxxx.uicomponents.TitleValueTextView
                 android:id="@+id/tvDiesel"
@@ -107,7 +108,7 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="5dp"
                 app:valueText=" Diesel"
-                app:titleText="1,209€" />
+                app:titleText="-,--€" />
 
             <dev.xxxxx.uicomponents.TitleValueTextView
                 android:id="@+id/tvDieselPremium"
@@ -117,7 +118,7 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="10dp"
                 app:valueText=" Diesel Premium"
-                app:titleText="1,209€"/>
+                app:titleText="-,--€"/>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 

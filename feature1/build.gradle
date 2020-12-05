@@ -20,6 +20,10 @@ android {
         consumerProguardFiles "consumer-rules.pro"
     }
 
+    buildFeatures {
+        viewBinding true
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -54,13 +58,13 @@ dependencies {
     implementation Android.RECYCLER_VIEW
 
     // Compose
-    implementation Android.COMPOSE_UI
-    implementation Android.COMPOSE_TOOLING
-    implementation Android.COMPOSE_FOUNDATION
-    implementation Android.COMPOSE_MATERIAL
-    implementation Android.COMPOSE_ICONS
-    implementation Android.COMPOSE_ICONS_EXT
-    implementation Android.COMPOSE_LIVEDATA
+//    implementation Android.COMPOSE_UI
+//    implementation Android.COMPOSE_TOOLING
+//    implementation Android.COMPOSE_FOUNDATION
+//    implementation Android.COMPOSE_MATERIAL
+//    implementation Android.COMPOSE_ICONS
+//    implementation Android.COMPOSE_ICONS_EXT
+//    implementation Android.COMPOSE_LIVEDATA
 
     // Navigation
     implementation Android.NAV_FRAGMENT
@@ -73,5 +77,5 @@ dependencies {
     // AndroidTest
     androidTestImplementation Testing.JUNIT_KTX
     androidTestImplementation Testing.ESPRESSO
-    androidTestImplementation Testing.COMPOSE_TESTS
+//    androidTestImplementation Testing.COMPOSE_TESTS
 }

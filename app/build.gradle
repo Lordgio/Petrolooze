@@ -91,7 +91,7 @@ dependencies {
     testImplementation Testing.JUNIT
     androidTestImplementation Testing.JUNIT_KTX
     androidTestImplementation Testing.ESPRESSO
-    androidTestImplementation Testing.COMPOSE_TESTS
+//    androidTestImplementation Testing.COMPOSE_TESTS
     androidTestImplementation Testing.HILT_TESTS
     kaptAndroidTest Other.HILT_COMPILER
 
