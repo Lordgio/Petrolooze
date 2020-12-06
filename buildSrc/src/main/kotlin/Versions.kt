@@ -1,8 +1,3 @@
-import org.gradle.api.internal.tasks.SnapshotTaskInputsBuildOperationResult
-import kotlin.String
-import org.gradle.plugin.use.PluginDependenciesSpec
-import org.gradle.plugin.use.PluginDependencySpec
-
 object Versions {
 
     // Kotlin
@@ -32,6 +27,7 @@ object Versions {
     const val SQLDELIGHT_TEST_DRIVER: String = "3.8.10.2"
     const val RETROFIT: String = "2.9.0"
     const val DAGGER: String = "2.28-alpha"
+    const val HILT_VIEWMODEL = "1.0.0-alpha01"
     const val DETEKT: String = "1.14.2"
     const val MOSHI: String = "1.11.0"
     const val XML_APIS: String = "1.4.01"

@@ -1,7 +1,9 @@
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
+    id 'kotlin-kapt'
     id 'io.gitlab.arturbosch.detekt'
+    id 'dagger.hilt.android.plugin'
     id 'androidx.navigation.safeargs.kotlin'
 }
 
@@ -43,6 +45,7 @@ dependencies {
     // Modules
     implementation project(':domainfeature1:public')
     implementation project(':utils:uicomponents')
+    implementation project(':utils:uiextensions')
 
     // Kotlin
     implementation Kotlin.STDLIB
@@ -56,6 +59,11 @@ dependencies {
     implementation Android.MATERIAL_UI
     implementation Android.CONSTRAINT_LAYOUT
     implementation Android.RECYCLER_VIEW
+
+    // Hilt
+    implementation Other.HILT
+    implementation Other.HILT_VIEWMODEL
+    kapt Other.HILT_COMPILER
 
     // Compose
 //    implementation Android.COMPOSE_UI

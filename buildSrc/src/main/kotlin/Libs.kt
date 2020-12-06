@@ -86,6 +86,7 @@ object Other {
     const val HILT = "com.google.dagger:hilt-android:${Versions.DAGGER}"
     const val HILT_COMPILER = "com.google.dagger:hilt-android-compiler:${Versions.DAGGER}"
     const val HILT_PLUGIN = "com.google.dagger:hilt-android-gradle-plugin:${Versions.DAGGER}"
+    const val HILT_VIEWMODEL = "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.HILT_VIEWMODEL}"
 
     // Detekt
     const val DETEKT = "io.gitlab.arturbosch.detekt:io.gitlab.arturbosch.detekt.gradle.plugin:${Versions.DETEKT}"

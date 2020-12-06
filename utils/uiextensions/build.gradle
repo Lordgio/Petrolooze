@@ -46,6 +46,7 @@ dependencies {
     implementation Android.APP_CORE
     implementation Android.APP_COMPAT
     implementation Android.FRAGMENT
+    implementation Android.RECYCLER_VIEW
 
     // Test
     testImplementation Testing.JUNIT

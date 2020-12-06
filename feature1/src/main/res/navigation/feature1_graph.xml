@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/feature1Fragment"
-        android:name="dev.xxxxx.feature1.Feature1Fragment"
+        android:name="dev.xxxxx.feature1.StationListFragment"
         android:label="Feature1Fragment" />
 
 </navigation>
