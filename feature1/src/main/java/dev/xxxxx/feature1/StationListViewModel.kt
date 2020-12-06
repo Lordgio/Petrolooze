@@ -1,7 +1,6 @@
 package dev.xxxxx.feature1
 
 import androidx.hilt.lifecycle.ViewModelInject
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -41,6 +40,12 @@ internal class StationListViewModel @ViewModelInject constructor(): ViewModel() 
             _viewState.value = ViewState()
             delay(1000)
             _viewState.value = ViewState(isLoading = false, isError = false, stationList = stations)
+            delay(3000)
+            _viewState.value = ViewState(isLoading = false, isError = false, stationList = stations.shuffled())
+            delay(3000)
+            _viewState.value = ViewState(isLoading = false, isError = false, stationList = emptyList())
+            delay(3000)
+            _viewState.value = ViewState(isLoading = false, isError = true, stationList = emptyList())
         }
     }
 

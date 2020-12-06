@@ -82,6 +82,9 @@ object Other {
     const val MOSHI = "com.squareup.moshi:moshi:${Versions.MOSHI}"
     const val MOSHI_KAPT = "com.squareup.moshi:moshi-kotlin-codegen:${Versions.MOSHI}"
 
+    //Lottie
+    const val LOTTIE = "com.airbnb.android:lottie:${Versions.LOTTIE}"
+
     // Hilt
     const val HILT = "com.google.dagger:hilt-android:${Versions.DAGGER}"
     const val HILT_COMPILER = "com.google.dagger:hilt-android-compiler:${Versions.DAGGER}"

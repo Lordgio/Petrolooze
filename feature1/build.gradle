@@ -74,6 +74,9 @@ dependencies {
 //    implementation Android.COMPOSE_ICONS_EXT
 //    implementation Android.COMPOSE_LIVEDATA
 
+    //Lottie
+    implementation Other.LOTTIE
+
     // Navigation
     implementation Android.NAV_FRAGMENT
     implementation Android.NAV_UI
