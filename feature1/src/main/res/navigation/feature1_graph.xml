@@ -9,6 +9,12 @@
         android:id="@+id/feature1Fragment"
         android:name="dev.xxxxx.feature1.StationListFragment"
         android:label="Feature1Fragment"
-        tools:layout="@layout/stations_list_fragment"/>
+        tools:layout="@layout/stations_list_fragment">
+        <action
+            android:id="@+id/action_feature1Fragment_to_utils_nav_graph"
+            app:destination="@id/utils_nav_graph" />
+    </fragment>
+
+    <include app:graph="@navigation/utils_nav_graph"/>
 
 </navigation>

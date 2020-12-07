@@ -1,6 +1,5 @@
 package dev.xxxxx.feature1
 
-import android.animation.Animator
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,10 +9,13 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.airbnb.lottie.LottieDrawable
 import dagger.hilt.android.AndroidEntryPoint
+import dev.xxxxx.domainfeature1.Station
 import dev.xxxxx.feature1.databinding.StationsListFragmentBinding
+import dev.xxxxx.uiextensions.Event
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -23,12 +25,18 @@ internal class StationListFragment : Fragment() {
     private val vm: StationListViewModel by viewModels()
     @Inject lateinit var stationAdapter: StationItemAdapter
 
-    private val viewStateObserver = Observer<StationListViewModel.ViewState>{
-        loadingAnimation(it.isLoading)
-        errorAnimation(it.isError)
-        binding.emptyStateGroup.isVisible = it.stationList.isEmpty()
-        binding.rvStations.isVisible = it.stationList.isNotEmpty()
-        stationAdapter.items = it.stationList
+    private val isLoadingObserver = Observer<Event<Boolean>> { event ->
+        event.getContentIfNotHandled()?.let { loadingAnimation(it) }
+    }
+
+    private val isErrorObserver = Observer<Event<Boolean>> { event ->
+        event.getContentIfNotHandled()?.let { errorAnimation(it) }
+    }
+
+    private val stationsObserver = Observer<List<Station>>{
+        binding.emptyStateGroup.isVisible = it.isEmpty()
+        binding.rvStations.isVisible = it.isNotEmpty()
+        stationAdapter.items = it
     }
 
     private fun loadingAnimation(isLoading: Boolean) {
@@ -48,32 +56,12 @@ internal class StationListFragment : Fragment() {
 
     private fun errorAnimation(isError: Boolean) {
         if(!isError) return
+        findNavController().navigate(R.id.action_feature1Fragment_to_utils_nav_graph)
+    }
 
-        with(binding.lottieAnimation){
-            repeatCount = 1
-            isVisible = true
-            setAnimation(R.raw.error)
-            playAnimation()
-            addAnimatorListener(object : Animator.AnimatorListener{
-                override fun onAnimationStart(p0: Animator?) {
-                    //do nothing
-                }
-
-                override fun onAnimationEnd(p0: Animator?) {
-                    cancelAnimation()
-                    isVisible = false
-                }
-
-                override fun onAnimationCancel(p0: Animator?) {
-                    //do nothing
-                }
-
-                override fun onAnimationRepeat(p0: Animator?) {
-                    //do nothing
-                }
-
-            })
-        }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        vm.loadData()
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -95,8 +83,9 @@ internal class StationListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        vm.viewState.observe(viewLifecycleOwner, viewStateObserver)
-        vm.loadData()
+        vm.stations.observe(viewLifecycleOwner, stationsObserver)
+        vm.isLoading.observe(viewLifecycleOwner, isLoadingObserver)
+        vm.isError.observe(viewLifecycleOwner, isErrorObserver)
     }
 
 }

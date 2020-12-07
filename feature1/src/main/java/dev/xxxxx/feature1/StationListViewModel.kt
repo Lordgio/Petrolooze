@@ -5,13 +5,14 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dev.xxxxx.domainfeature1.Station
+import dev.xxxxx.uiextensions.Event
 import dev.xxxxx.uiextensions.asLiveData
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 internal class StationListViewModel @ViewModelInject constructor(): ViewModel() {
 
-    private val stations = listOf(
+    private val stationsFake = listOf(
         Station("1", "Repsol", "CR CM-219, 4,9 - Mondéjar - Guadalajara", "1,209", "1,309", "1,089", "1,139"),
         Station("2", "Repsol", "CR CM-219, 4,9 - Mondéjar - Guadalajara", "1,209", "1,309", "1,089", "1,139"),
         Station("3", "Repsol", "CR CM-219, 4,9 - Mondéjar - Guadalajara", "1,209", "1,309", "1,089", "1,139"),
@@ -32,27 +33,24 @@ internal class StationListViewModel @ViewModelInject constructor(): ViewModel() 
         Station("18", "Repsol", "CR CM-219, 4,9 - Mondéjar - Guadalajara", "1,209", "1,309", "1,089", "1,139"),
     )
 
-    private val _viewState = MutableLiveData<ViewState>()
-    val viewState = _viewState.asLiveData()
+
+    private val _stations = MutableLiveData<List<Station>>()
+    val stations = _stations.asLiveData()
+
+    private val _isLoading = MutableLiveData<Event<Boolean>>()
+    val isLoading = _isLoading.asLiveData()
+
+    private val _isError = MutableLiveData<Event<Boolean>>()
+    val isError = _isError.asLiveData()
 
     fun loadData(){
         viewModelScope.launch {
-            _viewState.value = ViewState()
+            _stations.value = listOf()
             delay(1000)
-            _viewState.value = ViewState(isLoading = false, isError = false, stationList = stations)
+            _stations.value = stationsFake
             delay(3000)
-            _viewState.value = ViewState(isLoading = false, isError = false, stationList = stations.shuffled())
-            delay(3000)
-            _viewState.value = ViewState(isLoading = false, isError = false, stationList = emptyList())
-            delay(3000)
-            _viewState.value = ViewState(isLoading = false, isError = true, stationList = emptyList())
+            _isError.value = Event(true)
         }
     }
-
-    internal data class ViewState(
-        val isLoading: Boolean = true,
-        val isError: Boolean = false,
-        val stationList: List<Station> = listOf()
-    )
 
 }
