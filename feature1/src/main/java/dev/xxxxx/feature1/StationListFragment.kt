@@ -12,18 +12,16 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.airbnb.lottie.LottieDrawable
-import dagger.hilt.android.AndroidEntryPoint
 import dev.xxxxx.domainfeature1.Station
 import dev.xxxxx.feature1.databinding.StationsListFragmentBinding
 import dev.xxxxx.uiextensions.Event
-import javax.inject.Inject
+import org.koin.android.ext.android.inject
 
-@AndroidEntryPoint
 internal class StationListFragment : Fragment() {
 
     private lateinit var binding: StationsListFragmentBinding
     private val vm: StationListViewModel by viewModels()
-    @Inject lateinit var stationAdapter: StationItemAdapter
+    private val stationAdapter: StationItemAdapter by inject()
 
     private val isLoadingObserver = Observer<Event<Boolean>> { event ->
         event.getContentIfNotHandled()?.let { loadingAnimation(it) }

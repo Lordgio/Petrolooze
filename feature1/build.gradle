@@ -3,7 +3,6 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'io.gitlab.arturbosch.detekt'
-    id 'dagger.hilt.android.plugin'
     id 'androidx.navigation.safeargs.kotlin'
 }
 
@@ -60,19 +59,8 @@ dependencies {
     implementation Android.CONSTRAINT_LAYOUT
     implementation Android.RECYCLER_VIEW
 
-    // Hilt
-    implementation Other.HILT
-    implementation Other.HILT_VIEWMODEL
-    kapt Other.HILT_COMPILER
-
-    // Compose
-//    implementation Android.COMPOSE_UI
-//    implementation Android.COMPOSE_TOOLING
-//    implementation Android.COMPOSE_FOUNDATION
-//    implementation Android.COMPOSE_MATERIAL
-//    implementation Android.COMPOSE_ICONS
-//    implementation Android.COMPOSE_ICONS_EXT
-//    implementation Android.COMPOSE_LIVEDATA
+    // Koin
+    implementation Android.KOIN_ANDROID
 
     //Lottie
     implementation Other.LOTTIE
@@ -88,5 +76,4 @@ dependencies {
     // AndroidTest
     androidTestImplementation Testing.JUNIT_KTX
     androidTestImplementation Testing.ESPRESSO
-//    androidTestImplementation Testing.COMPOSE_TESTS
 }

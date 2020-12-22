@@ -12,7 +12,6 @@ buildscript {
         classpath Android.GRADLE_PLUGIN
         classpath Kotlin.GRADLE_PLUGIN
         classpath Other.SQLDELIGHT_PLUGIN
-        classpath Other.HILT_PLUGIN
         classpath Other.JACOCO
         classpath Android.NAV_GRADLE_PLUGIN
 

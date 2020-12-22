@@ -22,15 +22,8 @@ object Android {
     const val CONSTRAINT_LAYOUT = "androidx.constraintlayout:constraintlayout:${Versions.CONSTRAINT_LAYOUT}"
     const val RECYCLER_VIEW = "androidx.recyclerview:recyclerview:${Versions.RECYCLER_VIEW}"
 
-    // Compose
-//    const val COMPOSE_UI = "androidx.compose.ui:ui:${Versions.COMPOSE}"
-//    const val COMPOSE_MATERIAL = "androidx.compose.material:material:${Versions.COMPOSE}"
-//    const val COMPOSE_ICONS = "androidx.compose.material:material-icons-core:${Versions.COMPOSE}"
-//    const val COMPOSE_ICONS_EXT = "androidx.compose.material:material-icons-extended:${Versions.COMPOSE}"
-//    const val COMPOSE_TOOLING = "androidx.ui:ui-tooling:${Versions.COMPOSE}"
-//    const val COMPOSE_COMPILER = "androidx.compose.compiler:compiler:${Versions.COMPOSE}"
-//    const val COMPOSE_LIVEDATA = "androidx.compose.runtime:runtime-livedata:${Versions.COMPOSE}"
-//    const val COMPOSE_FOUNDATION = "androidx.compose.foundation:foundation:${Versions.COMPOSE}"
+    // Koin
+    const val KOIN_ANDROID = "org.koin:koin-android:${Versions.KOIN}"
 
     // Navigation
     const val NAV_FRAGMENT = "androidx.navigation:navigation-fragment-ktx:${Versions.NAVIGATION}"
@@ -47,12 +40,8 @@ object Testing {
     // Espresso
     const val ESPRESSO = "androidx.test.espresso:espresso-core:${Versions.ESPRESSO}"
 
-    // Hilt
-    const val HILT_TESTS = "com.google.dagger:hilt-android-testing:${Versions.DAGGER}"
-    const val HILT_TEST_COMPILER = "com.google.dagger:hilt-android-compiler:${Versions.DAGGER}"
-
-    // Compose
-//    const val COMPOSE_TESTS = "androidx.ui:ui-test:${Versions.COMPOSE}"
+    // Koin
+    const val KOIN_TESTS = "org.koin:koin-test:${Versions.KOIN}"
 
     // SQLDelight
     const val SQLDELIGHT_TEST_DRIVER = "com.squareup.sqldelight:sqlite-driver:${Versions.SQLDELIGHT}"
@@ -85,11 +74,8 @@ object Other {
     //Lottie
     const val LOTTIE = "com.airbnb.android:lottie:${Versions.LOTTIE}"
 
-    // Hilt
-    const val HILT = "com.google.dagger:hilt-android:${Versions.DAGGER}"
-    const val HILT_COMPILER = "com.google.dagger:hilt-android-compiler:${Versions.DAGGER}"
-    const val HILT_PLUGIN = "com.google.dagger:hilt-android-gradle-plugin:${Versions.DAGGER}"
-    const val HILT_VIEWMODEL = "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.HILT_VIEWMODEL}"
+    //Koin
+    const val KOIN = "org.koin:koin-core:${Versions.KOIN}"
 
     // Detekt
     const val DETEKT = "io.gitlab.arturbosch.detekt:io.gitlab.arturbosch.detekt.gradle.plugin:${Versions.DETEKT}"

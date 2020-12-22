@@ -1,6 +1,5 @@
 package dev.xxxxx.feature1
 
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -10,7 +9,7 @@ import dev.xxxxx.uiextensions.asLiveData
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-internal class StationListViewModel @ViewModelInject constructor(): ViewModel() {
+internal class StationListViewModel: ViewModel() {
 
     private val stationsFake = listOf(
         Station("1", "Repsol", "CR CM-219, 4,9 - Mondéjar - Guadalajara", "1,209", "1,309", "1,089", "1,139"),
