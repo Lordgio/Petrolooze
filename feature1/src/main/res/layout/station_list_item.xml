@@ -58,7 +58,6 @@
             android:textSize="14sp"
             tools:text="10 km"
             app:drawableStartCompat="@drawable/ic_near_me"
-            app:drawableTint="@color/md_deep_purple_600"
             android:drawablePadding="5dp"/>
 
     </LinearLayout>

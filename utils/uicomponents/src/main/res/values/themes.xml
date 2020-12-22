@@ -6,8 +6,8 @@
         <!--colorPrimary colors map to components and elements, such as app bars and buttons. -->
         <!--colorSecondary colors are most often used as accents on components, such as FABs and -->
         <!--selection controls.-->
-        <item name="colorPrimary">@color/md_purple_300</item>
-        <item name="colorPrimaryVariant">@color/md_purple_800</item>
+        <item name="colorPrimary">@color/md_deep_purple_200</item>
+        <item name="colorPrimaryVariant">@color/md_purple_600</item>
         <item name="colorSecondary">@color/md_green_300</item>
         <item name="colorSecondaryVariant">@color/md_green_600</item>
         <!--colorBackground appears behind scrollable content and is used for the default window-->

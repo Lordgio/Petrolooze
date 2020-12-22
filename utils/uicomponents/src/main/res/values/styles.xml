@@ -32,11 +32,11 @@
 
     <style name="Widget.Petrolooze.PurpleOvalTextView" parent="Widget.Petrolooze.StrokeOvalTextView">
         <item name="android:background">@drawable/purple_oval_shaped_textview_background</item>
-        <item name="android:textColor">@color/md_deep_purple_400</item>
+        <item name="android:textColor">?attr/colorPrimaryVariant</item>
     </style>
 
     <style name="Widget.Petrolooze.TitleTextView" parent="Widget.MaterialComponents.TextView">
-        <item name="android:textColor">@color/md_green_600</item>
+        <item name="android:textColor">?attr/colorSecondaryVariant</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">16sp</item>
     </style>
