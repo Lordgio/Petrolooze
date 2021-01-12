@@ -9,19 +9,15 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.DialogFragment
 import androidx.navigation.findNavController
 import dev.xxxxx.uicomponents.databinding.FragmentErrorDialogBinding
+import dev.xxxxx.uiextensions.viewBinding
 
-class ErrorDialogFragment : DialogFragment() {
+class ErrorDialogFragment : DialogFragment(R.layout.fragment_error_dialog) {
 
-    private lateinit var binding: FragmentErrorDialogBinding
+    private val binding by viewBinding(FragmentErrorDialogBinding::bind)
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        val v = inflater.inflate(R.layout.fragment_error_dialog, container, false)
-        binding = FragmentErrorDialogBinding.bind(v)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         startAnimation()
-        return v
     }
 
     private fun startAnimation(){

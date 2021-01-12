@@ -32,23 +32,21 @@ internal class StationListViewModel: ViewModel() {
         Station("18", "Repsol", "CR CM-219, 4,9 - Mondéjar - Guadalajara", "1,209", "1,309", "1,089", "1,139"),
     )
 
+    private val _viewState = MutableLiveData<Event<StationListViewState>>()
+    val viewState = _viewState.asLiveData()
 
     private val _stations = MutableLiveData<List<Station>>()
     val stations = _stations.asLiveData()
 
-    private val _isLoading = MutableLiveData<Event<Boolean>>()
-    val isLoading = _isLoading.asLiveData()
-
-    private val _isError = MutableLiveData<Event<Boolean>>()
-    val isError = _isError.asLiveData()
-
     fun loadData(){
         viewModelScope.launch {
             _stations.value = listOf()
-            delay(1000)
+            _viewState.value = Event(StationListViewState.Loading(true))
+            delay(3000)
+            _viewState.value = Event(StationListViewState.Loading(false))
             _stations.value = stationsFake
             delay(3000)
-            _isError.value = Event(true)
+            _viewState.value = Event(StationListViewState.Error)
         }
     }
 

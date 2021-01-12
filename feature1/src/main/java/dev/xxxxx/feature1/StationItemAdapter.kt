@@ -1,45 +1,35 @@
 package dev.xxxxx.feature1
 
-import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.LayoutRes
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import dev.xxxxx.domainfeature1.Station
 import dev.xxxxx.feature1.databinding.StationListItemBinding
-import dev.xxxxx.uiextensions.basicDiffUtil
+import dev.xxxxx.uiextensions.inflate
 
-internal class StationItemAdapter: RecyclerView.Adapter<StationItemAdapter.ViewHolder>() {
+internal class StationItemAdapter(
+    private val click: (Station) -> Unit
+): ListAdapter<Station, StationItemAdapter.ViewHolder>(DIFF_CALLBACK) {
 
-    var items: List<Station> by basicDiffUtil(
-        emptyList(),
-        areItemsTheSame = { old, new -> old.id == new.id },
-        areContentsTheSame = { old, new ->
-            old.aGasPrice == new.aGasPrice
-                    && old.premiumGasPrice == new.premiumGasPrice
-                    && old.gas95E5Price == new.gas95E5Price
-                    && old.gas98E5Price == new.gas98E5Price
+    companion object {
+        private val DIFF_CALLBACK = object: DiffUtil.ItemCallback<Station>(){
+            override fun areItemsTheSame(oldItem: Station, newItem: Station): Boolean =
+                oldItem.id == newItem.id
+
+            override fun areContentsTheSame(oldItem: Station, newItem: Station): Boolean =
+                oldItem.aGasPrice == newItem.aGasPrice
+                        && oldItem.premiumGasPrice == newItem.premiumGasPrice
+                        && oldItem.gas95E5Price == newItem.gas95E5Price
+                        && oldItem.gas98E5Price == newItem.gas98E5Price
         }
-    )
-    private var itemClickListener: ((Station) -> Unit)? = null
-
-    override fun getItemCount(): Int = items.size
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
-            ViewHolder(parent.inflate(R.layout.station_list_item))
-
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(items[position])
-    }
-
-    fun setOnItemClickListener(itemClickListener: (Station) -> Unit){
-        this.itemClickListener = itemClickListener
     }
 
     internal inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         private val binding = StationListItemBinding.bind(itemView)
 
-        fun bind(item: Station) = with(itemView) {
+        fun bind(item: Station, click: (Station) -> Unit) = with(itemView) {
             with(binding){
                 tvLabel.text = item.label
                 tvAddress.text = item.address
@@ -48,11 +38,14 @@ internal class StationItemAdapter: RecyclerView.Adapter<StationItemAdapter.ViewH
                 tvDiesel.titleText = item.aGasPrice
                 tvDieselPremium.titleText = item.premiumGasPrice
             }
-            setOnClickListener { itemClickListener?.invoke(item) }
+            setOnClickListener { click.invoke(item) }
         }
     }
-}
 
-fun ViewGroup.inflate(@LayoutRes layoutRes: Int): View {
-    return LayoutInflater.from(this.context).inflate(layoutRes, this, false)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
+        ViewHolder(parent.inflate(R.layout.station_list_item))
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.bind(getItem(position), click)
+    }
 }

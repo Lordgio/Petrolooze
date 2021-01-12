@@ -16,6 +16,9 @@ object Android {
     const val APP_CORE = "androidx.core:core-ktx:${Versions.APP_CORE}"
     const val APP_COMPAT = "androidx.appcompat:appcompat:${Versions.APP_COMPAT}"
 
+    //LifeCycle
+    const val LIFE_CYCLE = "androidx.lifecycle:lifecycle-common-java8:${Versions.LIFE_CYCLE}"
+
     // UI
     const val FRAGMENT = "androidx.fragment:fragment-ktx:${Versions.FRAGMENT}"
     const val MATERIAL_UI = "com.google.android.material:material:${Versions.MATERIAL}"
@@ -24,6 +27,7 @@ object Android {
 
     // Koin
     const val KOIN_ANDROID = "org.koin:koin-android:${Versions.KOIN}"
+    const val KOIN_VIEWMODEL = "org.koin:koin-androidx-viewmodel:${Versions.KOIN}"
 
     // Navigation
     const val NAV_FRAGMENT = "androidx.navigation:navigation-fragment-ktx:${Versions.NAVIGATION}"
