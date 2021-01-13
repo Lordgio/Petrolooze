@@ -3,7 +3,6 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'io.gitlab.arturbosch.detekt'
-    id 'dagger.hilt.android.plugin'
 }
 
 apply from: '../../jacoco.gradle'
@@ -53,9 +52,8 @@ dependencies {
     implementation Other.MOSHI
     kapt Other.MOSHI_KAPT
 
-    // Dagger
-    implementation Other.HILT
-    kapt Other.HILT_COMPILER
+    // Koin
+    implementation Android.KOIN_ANDROID
 
     // Test
     testImplementation project(':utils:testutils')

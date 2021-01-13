@@ -3,7 +3,6 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'io.gitlab.arturbosch.detekt'
-    id 'dagger.hilt.android.plugin'
     id 'androidx.navigation.safeargs.kotlin'
 }
 
@@ -79,9 +78,8 @@ dependencies {
     implementation Android.APP_CORE
     implementation Android.APP_COMPAT
 
-    // Hilt
-    implementation Other.HILT
-    kapt Other.HILT_COMPILER
+    // Koin
+    implementation Android.KOIN_ANDROID
 
     // Navigation
     implementation Android.NAV_FRAGMENT
@@ -91,9 +89,7 @@ dependencies {
     testImplementation Testing.JUNIT
     androidTestImplementation Testing.JUNIT_KTX
     androidTestImplementation Testing.ESPRESSO
-    androidTestImplementation Testing.COMPOSE_TESTS
-    androidTestImplementation Testing.HILT_TESTS
-    kaptAndroidTest Other.HILT_COMPILER
+    androidTestImplementation Testing.KOIN_TESTS
 
     // Test modules
     testImplementation project(':api:fake')

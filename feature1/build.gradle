@@ -20,6 +20,10 @@ android {
         consumerProguardFiles "consumer-rules.pro"
     }
 
+    buildFeatures {
+        viewBinding true
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -38,6 +42,8 @@ android {
 dependencies {
     // Modules
     implementation project(':domainfeature1:public')
+    implementation project(':utils:uicomponents')
+    implementation project(':utils:uiextensions')
 
     // Kotlin
     implementation Kotlin.STDLIB
@@ -52,14 +58,12 @@ dependencies {
     implementation Android.CONSTRAINT_LAYOUT
     implementation Android.RECYCLER_VIEW
 
-    // Compose
-    implementation Android.COMPOSE_UI
-    implementation Android.COMPOSE_TOOLING
-    implementation Android.COMPOSE_FOUNDATION
-    implementation Android.COMPOSE_MATERIAL
-    implementation Android.COMPOSE_ICONS
-    implementation Android.COMPOSE_ICONS_EXT
-    implementation Android.COMPOSE_LIVEDATA
+    // Koin
+    implementation Android.KOIN_ANDROID
+    implementation Android.KOIN_VIEWMODEL
+
+    //Lottie
+    implementation Other.LOTTIE
 
     // Navigation
     implementation Android.NAV_FRAGMENT
@@ -72,5 +76,4 @@ dependencies {
     // AndroidTest
     androidTestImplementation Testing.JUNIT_KTX
     androidTestImplementation Testing.ESPRESSO
-    androidTestImplementation Testing.COMPOSE_TESTS
 }

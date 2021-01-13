@@ -3,10 +3,10 @@
     <!--Top level DayNight theme to be used in AndroidManifest.xml-->
     <style name="Base.Theme.Petrolooze" parent="Base.Theme.Petrolooze.All">
         <!--Material color attributes (dark theme) -->
-        <item name="colorPrimary">@color/md_indigo_600</item>
-        <item name="colorPrimaryVariant">@color/md_indigo_900</item>
-        <item name="colorSecondary">@color/md_deep_orange_600</item>
-        <item name="colorSecondaryVariant">@color/md_deep_orange_900</item>
+        <item name="colorPrimary">@color/md_deep_purple_200</item>
+        <item name="colorPrimaryVariant">@color/md_purple_600</item>
+        <item name="colorSecondary">@color/md_green_300</item>
+        <item name="colorSecondaryVariant">@color/md_green_600</item>
         <item name="android:colorBackground">@color/md_grey_800</item>
         <item name="colorSurface">@color/md_grey_900</item>
         <item name="colorError">@color/md_red_700</item>

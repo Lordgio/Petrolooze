@@ -13,11 +13,8 @@ import dev.xxxxx.api.impl.data.toProduct
 import dev.xxxxx.api.impl.data.toProvince
 import dev.xxxxx.api.impl.mappers.toNetworkError
 import dev.xxxxx.api.impl.retrofit.BaseDataClient
-import javax.inject.Inject
-import javax.inject.Singleton
 
-@Singleton
-class BaseDataApiImpl @Inject constructor(private val retrofitClient: BaseDataClient) : BaseDataApi {
+class BaseDataApiImpl(private val retrofitClient: BaseDataClient) : BaseDataApi {
 
     override suspend fun getAutonomies(): Either<NetworkError, List<Autonomy>> = Either.catch {
         retrofitClient
