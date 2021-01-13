@@ -15,6 +15,10 @@ dependencies {
     // Kotlin
     implementation Kotlin.STDLIB
 
+    // Arrow
+    api platform(Other.ARROW_BOM)
+    api Other.ARROW_CORE
+
     // Test
     testImplementation Testing.JUNIT
 }

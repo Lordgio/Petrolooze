@@ -35,9 +35,9 @@ console-reports:
 output-reports:
   active: true
   exclude:
-  # - 'TxtOutputReport'
+    - 'TxtOutputReport'
   # - 'XmlOutputReport'
-  # - 'HtmlOutputReport'
+    - 'HtmlOutputReport'
 
 comments:
   active: true
@@ -75,7 +75,7 @@ complexity:
     includePrivateDeclarations: false
   ComplexMethod:
     active: true
-    threshold: 15
+    threshold: 20
     ignoreSingleWhenExpression: false
     ignoreSimpleWhenEntries: false
     ignoreNestingFunctions: false
@@ -265,7 +265,7 @@ formatting:
     continuationIndentSize: 4
   MaximumLineLength:
     active: true
-    maxLineLength: 120
+    maxLineLength: 150
   ModifierOrdering:
     active: true
     autoCorrect: true
@@ -580,7 +580,7 @@ style:
     active: false
   MaxLineLength:
     active: true
-    maxLineLength: 120
+    maxLineLength: 150
     excludePackageStatements: true
     excludeImportStatements: true
     excludeCommentStatements: false
@@ -591,7 +591,7 @@ style:
   NestedClassesVisibility:
     active: false
   NewLineAtEndOfFile:
-    active: true
+    active: false
   NoTabs:
     active: false
   OptionalAbstractKeyword:

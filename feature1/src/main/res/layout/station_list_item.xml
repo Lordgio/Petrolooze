@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="10dp">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivStation"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_station"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/llLabels"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="@id/ivStation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            tools:text="REPSOL"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:textSize="12sp"
+            tools:text="Carretera CM-219, 4,9 - MONDÉJAR - GUADALAJARA"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDistance"
+            style="@style/Widget.Petrolooze.PurpleOvalTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textSize="14sp"
+            tools:text="10 km"
+            app:drawableStartCompat="@drawable/ic_near_me"
+            android:drawablePadding="5dp"/>
+
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/llLabels"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/layoutFuelPrices"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
+
+            <dev.xxxxx.uicomponents.TitleValueTextView
+                android:id="@+id/tv95Petrol"
+                style="@style/Widget.Petrolooze.StrokeOvalTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="5dp"
+                app:valueText=" Gasolina 95"
+                app:titleText="-,--€" />
+
+            <dev.xxxxx.uicomponents.TitleValueTextView
+                android:id="@+id/tv98Petrol"
+                style="@style/Widget.Petrolooze.StrokeOvalTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                app:valueText=" Gasolina 98"
+                app:titleText="-,--€" />
+
+            <dev.xxxxx.uicomponents.TitleValueTextView
+                android:id="@+id/tvDiesel"
+                style="@style/Widget.Petrolooze.StrokeOvalTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                app:valueText=" Diesel"
+                app:titleText="-,--€" />
+
+            <dev.xxxxx.uicomponents.TitleValueTextView
+                android:id="@+id/tvDieselPremium"
+                style="@style/Widget.Petrolooze.StrokeOvalTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="10dp"
+                app:valueText=" Diesel Premium"
+                app:titleText="-,--€"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </HorizontalScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

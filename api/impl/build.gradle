@@ -38,21 +38,30 @@ android {
 dependencies {
     // Modules
     implementation project(':api:public')
+    implementation project(':utils:extensions')
 
     // Kotlin
     implementation Kotlin.STDLIB
+    implementation Kotlin.COROUTINES_CORE
 
     // Retrofit
-    implementation Other.RETROFIT
-    implementation Other.RETROFIT_MOSHI
+    api Other.RETROFIT
+    api Other.RETROFIT_MOSHI
 
     // Moshi
-    kapt Other.MOSHI
+    implementation Other.MOSHI
+    kapt Other.MOSHI_KAPT
+
+    // Koin
+    implementation Android.KOIN_ANDROID
 
     // Test
+    testImplementation project(':utils:testutils')
+    testImplementation project(':api:fake')
     testImplementation Testing.JUNIT
+    testImplementation Testing.COROUTINES
+    testImplementation Testing.MOCKK
 
     // AndroidTest
     androidTestImplementation Testing.JUNIT_KTX
-    androidTestImplementation Testing.ESPRESSO
 }

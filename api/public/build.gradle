@@ -9,7 +9,14 @@ java {
     targetCompatibility = JavaVersion.VERSION_1_8
 }
 
+kotlin {
+    explicitApi()
+}
+
 dependencies {
+    // Modules
+    implementation project(':utils:extensions')
+
     // Kotlin
     implementation Kotlin.STDLIB
 }

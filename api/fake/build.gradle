@@ -12,6 +12,7 @@ java {
 dependencies {
     // Modules
     implementation project(':api:public')
+    implementation project(':utils:extensions')
 
     // Kotlin
     implementation Kotlin.STDLIB
