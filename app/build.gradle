@@ -58,14 +58,14 @@ android {
 dependencies {
     // Public modules
     implementation project(':api:public')
-    implementation project(':datasourcefeature1:public')
+    implementation project(':masterdatasource:public')
     implementation project(':db:public')
     implementation project(':domainfeature1:public')
     implementation project(':feature1')
 
     // Impl modules
     implementation project(':api:impl')
-    implementation project(':datasourcefeature1:impl')
+    implementation project(':masterdatasource:impl')
     implementation project(':db:impl')
     implementation project(':domainfeature1:impl')
 
@@ -97,7 +97,7 @@ dependencies {
 
     // Test modules
     testImplementation project(':api:fake')
-    testImplementation project(':datasourcefeature1:fake')
+    testImplementation project(':masterdatasource:fake')
     testImplementation project(':db:fake')
     testImplementation project(':domainfeature1:fake')
 }

@@ -9,9 +9,13 @@ include ':api:public'
 include ':api:fake'
 include ':api:impl'
 
-include ':datasourcefeature1:public'
-include ':datasourcefeature1:impl'
-include ':datasourcefeature1:fake'
+include ':masterdatasource:public'
+include ':masterdatasource:impl'
+include ':masterdatasource:fake'
+
+include ':currentdatasource:public'
+include ':currentdatasource:impl'
+include ':currentdatasource:fake'
 
 include ':domainfeature1:public'
 include ':domainfeature1:impl'

@@ -1,5 +1,4 @@
 plugins {
-    id 'java-library'
     id 'kotlin'
     id 'io.gitlab.arturbosch.detekt'
 }
@@ -9,20 +8,11 @@ java {
     targetCompatibility = JavaVersion.VERSION_1_8
 }
 
-kotlin {
-    explicitApi()
-}
-
-compileKotlin {
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8
-    }
-}
-
 dependencies {
     // Modules
     implementation project(':utils:extensions')
 
     // Kotlin
     implementation Kotlin.STDLIB
+    implementation Kotlin.COROUTINES_CORE
 }

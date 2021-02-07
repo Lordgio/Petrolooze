@@ -1,0 +1,40 @@
+plugins {
+    id 'kotlin'
+    id 'org.jetbrains.kotlin.jvm'
+    id 'kotlin-kapt'
+    id 'io.gitlab.arturbosch.detekt'
+}
+
+apply from: '../../jacoco.gradle'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+}
+
+dependencies {
+    // Modules
+    implementation project(':masterdatasource:public')
+    implementation project(':api:public')
+    implementation project(':db:public')
+    implementation project(':utils:extensions')
+
+    // Kotlin
+    implementation Kotlin.STDLIB
+    implementation Kotlin.COROUTINES_CORE
+
+    // Dagger
+    implementation Other.HILT
+    kapt Other.HILT_COMPILER
+
+    // Test
+    testImplementation Testing.JUNIT
+    testImplementation project(':api:fake')
+    testImplementation project(':db:fake')
+}
